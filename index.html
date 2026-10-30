@@ -1,0 +1,770 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body><title>E-Portofolio Erwin Fajariansyah</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap"><style id="css">/* E-Portofolio – tema Citrus Teal.
+   Teal tua (warna utama), mint (latar aksen), jeruk (aksen hangat), peach (sorotan).
+   Ganti warna utama cukup di --ums dan --ums-deep; aksen jeruk di --gold. */
+:root{
+  --ums:#0E7C7B;        /* teal tua: tombol, tautan, judul tabel */
+  --ums-deep:#0B4D4F;   /* teal paling gelap: header, banner, footer */
+  --ums-soft:#E1F4F1;   /* mint muda: latar aksen */
+  --gold:#F47A3D;       /* jeruk: aksen hangat */
+  --citrus-light:#FFB48A; /* jeruk muda: teks aksen di atas latar teal gelap */
+  --on-primary:#FFFFFF; /* teks di atas tombol teal */
+  --band-end:#0E7C7B;   /* ujung terang gradasi banner */
+  --bg:#F2F8F7; --surface:#FFFFFF; --sunk:#E9F4F2; --ink:#10302F; --muted:#557370; --line:#D2E7E3;
+  --on-ums:#FFFFFF; --on-ums-muted:#C2E6E0;
+  --mark:#FDEADD; --mark-ink:#8C3A12;
+  --ok:#1E8A5A; --ok-soft:#E5F5EC; --warn:#C23A2E; --warn-soft:#FBEAE7; --info:#0E7C7B; --info-soft:#E1F4F1;
+  --shadow:0 1px 2px rgba(12,48,47,.06),0 6px 20px rgba(12,48,47,.07);
+  --radius:12px;
+  --f-display:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  --f-body:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+:root{color-scheme:light}
+:root[data-mode="dark"]{
+  --ums:#4CC5B9; --ums-deep:#0A3638; --ums-soft:#143B3B; --gold:#FF9259; --citrus-light:#FFB48A; --on-primary:#06201F; --band-end:#14625F;
+  --bg:#0A1919; --surface:#0F2423; --sunk:#142E2D; --ink:#E2F3F0; --muted:#94B8B3; --line:#204241;
+  --on-ums:#FFFFFF; --on-ums-muted:#B4DCD6; --mark:#4A2614; --mark-ink:#FFD3B8;
+  --ok:#5BC994; --ok-soft:#11302A; --warn:#F08B78; --warn-soft:#3A1E1B; --info:#6FD6CB; --info-soft:#143B3B;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:var(--ums)}
+img{max-width:100%}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* ---------- header ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:25;background:var(--ums-deep)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ums-deep);color:var(--on-ums);box-shadow:0 1px 0 rgba(255,255,255,.06),0 4px 16px rgba(11,77,79,.22)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--on-ums);text-decoration:none;min-width:0}
+.logo{flex:none;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),#F9B48C);color:#3D1704;font:800 15px/1 var(--f-display);letter-spacing:.02em}
+.brand b{display:block;font:700 16px/1.2 var(--f-display);white-space:nowrap}
+.brand small{display:block;font:500 12px/1.3 var(--f-body);color:var(--on-ums-muted)}
+.nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font:600 14px/1 var(--f-body);padding:10px 14px;border-radius:8px;color:var(--on-ums-muted);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+.nav a:hover{color:var(--on-ums);background:rgba(255,255,255,.08)}
+.nav a[aria-current="page"]{color:var(--ums-deep);background:var(--on-ums)}
+
+/* ---------- edit bar ---------- */
+.editbar{position:sticky;top:calc(68px + env(safe-area-inset-top,0px));z-index:15;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.editbar .wrap{display:flex;gap:10px;align-items:center;padding-block:10px;flex-wrap:wrap;font-size:14px}
+.editbar .badge{font:700 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:#3D1704;padding:6px 8px;border-radius:6px}
+.editbar .msg{flex:1;min-width:180px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font:600 14px/1 var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 16px;border-radius:8px;cursor:pointer;text-decoration:none;transition:border-color .15s,background .15s,transform .1s}
+.btn:hover{border-color:var(--ums)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--ums);color:var(--on-primary);border-color:var(--ums)}
+.btn.primary:hover{background:var(--ums-deep);border-color:var(--ums-deep)}
+.btn.gold{background:var(--gold);color:#3D1704;border-color:var(--gold)}
+.btn.ghost{background:transparent;color:var(--on-ums);border-color:rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.sm{padding:7px 11px;font-size:13px}
+.btn.x{padding:5px 9px;font-size:12px;color:var(--warn);background:transparent}
+.btn.x:hover{border-color:var(--warn)}
+
+/* ---------- hero (beranda) ---------- */
+.hero-band{position:relative;overflow:hidden;color:var(--on-ums);
+  background:radial-gradient(560px 340px at 96% 108%,rgba(244,122,61,.42),transparent 66%),radial-gradient(1200px 400px at 85% -10%,rgba(166,227,219,.22),transparent 60%),linear-gradient(135deg,var(--ums-deep) 0%,var(--band-end) 100%)}
+.hero-band::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;
+  background-image:radial-gradient(rgba(255,255,255,.9) 1px,transparent 1px);background-size:22px 22px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 30%,#000);mask-image:linear-gradient(90deg,transparent 30%,#000)}
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:56px;align-items:center;padding-block:64px 88px}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:600 12px/1 var(--f-body);letter-spacing:.04em;padding:7px 11px;border-radius:99px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:var(--on-ums)}
+.hero h1{font:800 clamp(34px,5.4vw,56px)/1.05 var(--f-display);margin:0 0 12px;letter-spacing:-.02em;text-wrap:balance}
+.hero .role{font:700 20px/1.3 var(--f-display);color:var(--citrus-light);margin:0}
+.hero .prog{color:var(--on-ums-muted);margin:6px 0 20px;font-size:15px}
+.hero .tag{font-size:18px;line-height:1.6;max-width:56ch;margin:0 0 28px;color:#E8F7F4}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .strip{display:none}
+.portrait{position:relative;isolation:isolate}
+.portrait figure img,.portrait .ph{aspect-ratio:4/5;border-radius:18px;border:4px solid rgba(255,255,255,.9);box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.portrait .ph{background:linear-gradient(160deg,#159590,var(--ums-deep));color:var(--on-ums-muted);border-style:solid}
+.portrait .ph svg{stroke:var(--on-ums-muted)}
+.portrait::before{content:"";position:absolute;inset:auto -14px -14px auto;width:70%;height:70%;border-radius:18px;background:var(--gold);opacity:.9;z-index:-1}
+.portrait figcaption{color:var(--on-ums-muted)}
+.hero-band .ed{outline-color:rgba(255,255,255,.55)!important}
+
+/* ---------- banner halaman ---------- */
+.page-band{background:linear-gradient(135deg,var(--ums-deep),var(--band-end));color:var(--on-ums);position:relative;overflow:hidden}
+.page-band::after{content:"";position:absolute;right:-70px;top:-80px;width:300px;height:300px;border-radius:50%;border:36px solid rgba(244,122,61,.30);box-shadow:inset 0 0 0 18px rgba(255,180,138,.10)}
+.page-band .wrap{position:relative;z-index:1;padding-block:44px 52px}
+.crumb{font-size:13px;color:var(--on-ums-muted);display:flex;gap:8px;align-items:center;margin-bottom:14px}
+.crumb a{color:var(--on-ums-muted);text-decoration:none}
+.crumb a:hover{color:#fff}
+.page-band .strip{display:inline-block;font:700 12px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:#3D1704;background:var(--gold);padding:6px 11px;border-radius:99px;margin-bottom:14px}
+.page-band h1{font:800 clamp(28px,4.4vw,44px)/1.12 var(--f-display);margin:0 0 12px;letter-spacing:-.015em;text-wrap:balance}
+.page-band .intro{max-width:68ch;margin:0;color:#E0F3EF;font-size:17px}
+.page-band .ed{outline-color:rgba(255,255,255,.55)!important}
+
+/* ---------- tata letak isi ---------- */
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;align-items:start;padding-block:32px 8px}
+.layout.single{grid-template-columns:minmax(0,1fr)}
+.side{position:sticky;top:92px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.editing .side{top:150px}
+.side h4{font:700 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:4px 8px 10px}
+.side button{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;font:600 14px/1.35 var(--f-body);background:none;border:0;color:var(--ink);padding:9px 8px;border-radius:8px;cursor:pointer}
+.side button:hover,.side button.on{background:var(--ums-soft);color:var(--ums)}
+.side button.on .n{background:var(--ums);color:var(--surface)}
+.side button .n{flex:none;min-width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:var(--ums-soft);color:var(--ums);font:700 11px/1 var(--f-mono)}
+.content{display:flex;flex-direction:column;gap:20px;min-width:0}
+
+/* ---------- kartu bagian ---------- */
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 30px;scroll-margin-top:96px}
+.editing .sec{scroll-margin-top:156px}
+.sec>header{display:flex;flex-direction:column;gap:8px;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.sec h2{font:800 23px/1.25 var(--f-display);margin:0;display:flex;gap:12px;align-items:center;text-wrap:balance;letter-spacing:-.01em}
+.sec .lead{margin:0;color:var(--muted);font-size:15.5px;line-height:1.55;max-width:66ch}
+.sec.numd .lead{padding-left:46px}
+.sec h2 .no{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--ums);color:var(--on-primary);box-shadow:3px 3px 0 var(--gold);font:700 13px/1 var(--f-mono)}
+.blocks{display:flex;flex-direction:column;gap:16px}
+.blk{position:relative;min-width:0}
+p.t{margin:0;white-space:pre-line;max-width:72ch}
+
+/* subjudul analisis */
+.sub{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sub .sh{display:flex;gap:10px;align-items:center}
+.sub .sh svg{flex:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sub h3{font:700 17px/1.35 var(--f-display);margin:0;color:var(--ink);text-wrap:balance}
+.sub p{margin:0;white-space:pre-line;max-width:72ch}
+.sub p:empty{display:none}
+.sub.plus,.sub.minus,.sub.next,.sub.key{padding:16px 20px 18px;border-radius:12px;border:1px solid var(--line)}
+.sub.plus{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 28%,transparent)} .sub.plus .sh{color:var(--ok)} .sub.plus h3{color:var(--ok)}
+.sub.minus{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 28%,transparent)} .sub.minus .sh{color:var(--warn)} .sub.minus h3{color:var(--warn)}
+.sub.next{background:var(--info-soft);border-color:color-mix(in srgb,var(--info) 28%,transparent)} .sub.next .sh{color:var(--info)} .sub.next h3{color:var(--info)}
+.sub.key{background:var(--mark);border-color:color-mix(in srgb,var(--gold) 55%,transparent)} .sub.key .sh{color:var(--mark-ink)}
+.sub.key h3{color:var(--mark-ink);font:700 12px/1.2 var(--f-body);letter-spacing:.1em;text-transform:uppercase}
+.sub.key p{font-size:17px;line-height:1.6;color:var(--ink)}
+ul.chk{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;max-width:74ch}
+ul.chk li{position:relative;padding-left:22px}
+ul.chk li::before{content:"";position:absolute;left:3px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.plus ul.chk li::before{background:var(--ok)} .minus ul.chk li::before{background:var(--warn)} .next ul.chk li::before{background:var(--info)}
+
+ul.l{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+ul.l li{position:relative;padding-left:26px}
+ul.l li::before{content:"";position:absolute;left:4px;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+
+dl.kv{display:grid;grid-template-columns:minmax(140px,auto) minmax(0,1fr);margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+dl.kv dt,dl.kv dd{padding:11px 16px;border-bottom:1px solid var(--line);margin:0}
+dl.kv dt{font:600 13px/1.6 var(--f-body);color:var(--muted);background:var(--sunk)}
+dl.kv dd{font-weight:600}
+dl.kv dt:nth-last-of-type(1),dl.kv dd:last-of-type{border-bottom:0}
+
+figure{margin:0}
+figure img,.ph{width:100%;max-width:100%;border-radius:10px;display:block;object-fit:cover;aspect-ratio:16/9;background:var(--sunk)}
+.ph{display:grid;place-items:center;text-align:center;color:var(--muted);font:600 13px/1.5 var(--f-body);border:2px dashed var(--line);padding:16px;
+  background:linear-gradient(135deg,var(--ums-soft),var(--sunk))}
+.ph svg{width:36px;height:36px;display:block;margin:0 auto 8px;stroke:var(--ums);opacity:.7}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.gal figure img,.gal .ph{aspect-ratio:4/3}
+
+.lnk{display:flex;gap:14px;align-items:center;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s,transform .15s}
+a.lnk:hover{border-color:var(--ums);box-shadow:var(--shadow);transform:translateY(-1px)}
+.lnk .ic{flex:none;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--ums);color:var(--on-primary)}
+.lnk .ic svg{width:22px;height:22px;stroke:currentColor}
+.lnk .tx{min-width:0;flex:1}
+.lnk .lb{font-weight:700;display:block}
+.lnk .u{font:500 12px/1.4 var(--f-mono);color:var(--muted);overflow-wrap:anywhere}
+a.lnk::after{content:"↗";font-weight:700;color:var(--ums);flex:none}
+.lnk.empty{border-style:dashed}
+.lnk.empty .ic{background:var(--sunk);color:var(--muted)}
+.lnk.empty .u{color:var(--warn)}
+.embed{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:10px;overflow:hidden;background:var(--sunk);margin-bottom:10px;box-shadow:var(--shadow)}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px/1.4 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--ums);background:var(--ums-soft);border-bottom:2px solid color-mix(in srgb,var(--ums) 30%,transparent)}
+td{font-variant-numeric:tabular-nums} td:first-child{font-weight:600}
+tbody tr:nth-child(even) td{background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+mark.fill{background:var(--mark);color:var(--mark-ink);border-radius:4px;padding:0 3px}
+
+/* kartu menu di beranda */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:8px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s,transform .15s}
+.card:hover{border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-2px)}
+.card .ci{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--mark);color:var(--gold);margin-bottom:6px}
+.card .ci svg{width:22px;height:22px;stroke:currentColor}
+.card b{font:800 18px/1.25 var(--f-display)}
+.card span{color:var(--muted);font-size:14px}
+.card i{font:700 13px/1 var(--f-body);font-style:normal;color:var(--ums);margin-top:auto;padding-top:10px}
+.home-grid{display:flex;flex-direction:column;gap:20px;padding-block:0 8px;margin-top:-48px;position:relative;z-index:2}
+
+/* ---------- mode edit ---------- */
+.editing .ed{outline:1.5px dashed color-mix(in srgb,var(--ums) 55%,transparent);outline-offset:3px;border-radius:4px;white-space:pre-wrap;min-height:1.4em;cursor:text}
+.editing .ed:focus{outline:2px solid var(--gold);background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.ctl{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.blk-del{justify-content:flex-end}
+.editing .blk{padding:12px;border:1px dashed var(--line);border-radius:10px}
+.li-row{display:flex;gap:6px;align-items:flex-start}
+.li-row > :first-child{flex:1;min-width:0}
+input.url{width:100%;font:500 13px/1.4 var(--f-mono);padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);margin-top:8px}
+label.chk{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-top:8px;cursor:pointer}
+.addrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding-top:12px;border-top:1px dashed var(--line)}
+.addrow span{font:700 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+form.inline{display:inline;margin:0}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(24px + env(safe-area-inset-bottom,0px));background:var(--ums-deep);color:#fff;padding:12px 18px;border-radius:10px;font-size:14px;z-index:50;max-width:calc(100% - 32px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ums-deep);color:var(--on-ums-muted);margin-top:48px;border-top:4px solid var(--gold)}
+footer .wrap{padding-block:32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;font-size:14px}
+footer b{color:#fff;font:700 15px/1.3 var(--f-display);display:block}
+footer a{color:var(--on-ums-muted)}
+footer a:hover{color:#fff}
+
+/* ---------- login ---------- */
+.login-page{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px)}
+.login-art{background:radial-gradient(800px 400px at 20% 0%,rgba(255,255,255,.14),transparent 60%),linear-gradient(150deg,var(--ums-deep),var(--band-end));color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.login-art h2{font:800 clamp(28px,3.4vw,40px)/1.15 var(--f-display);margin:0;max-width:16ch;letter-spacing:-.015em}
+.login-art p{color:var(--on-ums-muted);max-width:42ch;margin:12px 0 0}
+.login-side{display:grid;place-items:center;padding:40px 24px;background:var(--surface)}
+.login-card{width:100%;max-width:380px;display:flex;flex-direction:column;gap:10px}
+.login-card h1{font:800 26px/1.2 var(--f-display);margin:0}
+.login-card .sub-t{color:var(--muted);margin:0 0 10px}
+.login-card label{font:600 13px/1.4 var(--f-body);color:var(--ink);margin-top:6px}
+.login-card input{font:16px var(--f-body);padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.login-card input:focus{border-color:var(--ums);outline:3px solid color-mix(in srgb,var(--ums) 20%,transparent)}
+.login-card .btn{margin-top:12px;padding:13px;font-size:15px}
+.login-card .back{font-size:14px;text-align:center;margin-top:6px}
+.err{background:var(--warn-soft);color:var(--warn);padding:10px 12px;border-radius:8px;margin:0;font-weight:600;font-size:14px}
+
+/* ---------- responsif ---------- */
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side{position:static;display:flex;flex-wrap:wrap;gap:6px;padding:12px}
+  .side h4{flex-basis:100%;margin:2px 4px 4px}
+  .side button{width:auto;padding:7px 10px;border:1px solid var(--line);border-radius:99px}
+  .side button .n{display:none}
+  .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:44px 80px}
+  .portrait{max-width:240px;order:-1}
+  .login-page{grid-template-columns:minmax(0,1fr)}
+  .login-art{padding:36px 24px}
+}
+@media (max-width:640px){
+  .top .wrap{gap:6px}
+  .nav{margin-left:0;flex-basis:100%}
+  .editbar{top:auto;position:relative}
+  .sec{padding:20px 18px}
+  dl.kv{grid-template-columns:minmax(0,1fr)}
+  dl.kv dt{border-bottom:0;padding-bottom:2px}
+  .brand small{display:none}
+}
+
+/* angka penting */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.stat{position:relative;display:flex;flex-direction:column;gap:3px;padding:16px 18px;border-radius:12px;background:var(--ums-soft);border:1px solid color-mix(in srgb,var(--ums) 18%,transparent);min-width:0}
+.stat .sv{font:800 28px/1.1 var(--f-display);color:var(--ums);font-variant-numeric:tabular-nums;letter-spacing:-.015em;overflow-wrap:anywhere}
+.stat .sl{font:600 14px/1.4 var(--f-body);color:var(--ink)}
+.stat .sn{font-size:13px;line-height:1.4;color:var(--muted)}
+.stat .btn.x{position:absolute;top:6px;right:6px}
+/* grafik batang */
+.bars{display:flex;flex-direction:column;gap:12px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.bar{display:grid;grid-template-columns:minmax(130px,230px) minmax(0,1fr) 64px;gap:14px;align-items:center}
+.editing .bar{grid-template-columns:minmax(130px,230px) minmax(0,1fr) 64px auto}
+.bar .bl{font-size:14px;font-weight:600;line-height:1.35}
+.bar .bt{position:relative;height:12px;border-radius:99px;background:var(--sunk)}
+.bar .bf{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--ums)}
+.bar.lo .bf{background:var(--warn)}
+.bar .tg{position:absolute;top:-5px;bottom:-5px;width:2px;margin-left:-1px;border-radius:2px;background:var(--ink);opacity:.5}
+.bar .bv{font:700 14px/1 var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.bar.lo .bv{color:var(--warn)}
+.bnote{font-size:13px;color:var(--muted);margin:0;padding-top:4px;border-top:1px dashed var(--line)}
+/* alur bertahap */
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:st;display:flex;flex-direction:column}
+ol.steps>li{counter-increment:st;position:relative;padding:0 0 20px 50px;min-width:0}
+ol.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--ums);border:2px solid var(--ums);font:700 13px/1 var(--f-mono)}
+ol.steps>li::after{content:"";position:absolute;left:16px;top:38px;bottom:4px;width:2px;background:var(--line)}
+ol.steps>li:last-child{padding-bottom:0} ol.steps>li:last-child::after{display:none}
+ol.steps h4{font:700 16px/1.35 var(--f-display);margin:6px 0 4px}
+ol.steps p{margin:0;max-width:70ch}
+/* navigasi antarhalaman */
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-block:28px 0}
+.pn a,.tabnext{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.pn a:hover,.tabnext:hover{border-color:var(--ums);transform:translateY(-1px)}
+.pn small,.tabnext small{font:700 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pn b,.tabnext b{font:800 18px/1.25 var(--f-display);color:var(--ums)}
+.pn .nx{text-align:right;align-items:flex-end;grid-column:2}
+.tabnext{font:inherit;cursor:pointer;align-items:flex-end;text-align:right;margin-left:auto;min-width:min(100%,320px)}
+@media (max-width:640px){
+  .pn{grid-template-columns:minmax(0,1fr)} .pn .nx{grid-column:auto}
+  .bar,.editing .bar{grid-template-columns:minmax(0,1fr) 56px} .bar .bl{grid-column:1/-1}
+  .sec.numd .lead{padding-left:0}
+  .stat .sv{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* tombol mode terang/gelap */
+.theme-btn{flex:none;display:inline-grid;place-items:center;width:40px;height:40px;padding:0;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--on-ums);cursor:pointer;transition:background .15s,border-color .15s}
+.theme-btn:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.theme-btn svg{width:18px;height:18px}
+/* header selalu satu baris */
+.top .wrap{flex-wrap:nowrap;gap:16px}
+.brand{flex:none}
+.nav{flex:0 1 auto;margin-left:auto}
+.theme-btn{margin-left:0}
+@media (max-width:1240px){.brand small{display:none}}
+@media (max-width:1100px){.nav a{padding:10px 10px}.nav{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 20px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 20px),transparent)}}
+@media (max-width:1100px){.brand b{font-size:15px}.top .wrap{gap:12px}}
+.menu-btn{display:none;flex:none;place-items:center;width:40px;height:40px;padding:0;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--on-ums);cursor:pointer}
+.menu-btn svg{width:20px;height:20px}
+@media (max-width:900px){
+  .top .wrap{gap:8px;position:relative}
+  .brand{flex:1 1 auto;min-width:0}
+  .brand>span:last-child{min-width:0}
+  .brand b{overflow:hidden;text-overflow:ellipsis}
+  .menu-btn{display:inline-grid}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:4px;margin:0;padding:8px 16px 16px;background:var(--ums-deep);box-shadow:0 12px 24px rgba(0,0,0,.25);-webkit-mask-image:none;mask-image:none}
+  .top.open .nav{display:flex}
+  .nav a{padding:12px 14px}
+}
+/* video dan berkas unggahan */
+figure video{width:100%;max-width:100%;border-radius:10px;display:block;aspect-ratio:16/9;background:#0A1919;object-fit:contain}
+.gal figure video{aspect-ratio:4/3}
+.portrait figure video{aspect-ratio:4/5;border-radius:18px;border:4px solid rgba(255,255,255,.9);box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.lnk.filecard{min-height:96px;width:100%;font:inherit;text-align:left;cursor:pointer}
+.lnk.filecard:hover{border-color:var(--ums);box-shadow:var(--shadow)}
+.portrait .lnk.filecard{background:var(--surface)}
+/* penampil PDF */
+.pdfview{max-height:640px;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:var(--sunk);border:1px solid var(--line);border-radius:10px 10px 0 0;padding:12px;display:flex;flex-direction:column;gap:12px}
+.pdfview canvas{width:100%;height:auto;display:block;background:#fff;border-radius:4px;box-shadow:var(--shadow)}
+.gal .pdfview{max-height:340px;padding:8px;gap:8px}
+.pdfmsg{color:var(--muted);font-size:14px;padding:32px 12px;text-align:center}
+.pdfbar{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px 12px;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);font-size:13px;color:var(--muted)}
+.pdfbar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* pratinjau dokumen dari link */
+.embed.doc{aspect-ratio:auto;height:min(78vh,720px);border:1px solid var(--line);margin-bottom:0;border-radius:10px 10px 0 0;box-shadow:none;background:#fff}
+.lnk.under{border-radius:0 0 10px 10px;border-top:0;padding:10px 16px}
+.lnk.under .ic{width:36px;height:36px}
+.doctitle{margin-bottom:8px;font-size:15px}
+/* tab siklus (halaman UAS) */
+.tabs-band{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-block:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;display:inline-flex;align-items:center;gap:8px;font:700 14px/1 var(--f-body);padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--muted);cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.tabs button:hover{color:var(--ums);border-color:var(--ums)}
+.tabs button[aria-selected="true"]{background:var(--ums);border-color:var(--ums);color:var(--on-primary)}
+.tbadge{font:700 11px/1 var(--f-body);padding:4px 7px;border-radius:99px;background:var(--gold);color:#3D1704}
+
+/* sentuhan citrus */
+.top{border-bottom:3px solid var(--gold)}
+.sec>header{border-bottom:2px solid color-mix(in srgb,var(--ums) 14%,var(--line))}
+.btn.ghost:hover{border-color:var(--citrus-light);color:var(--citrus-light)}
+.nav a[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--gold)}
+.side button.on{box-shadow:inset 3px 0 0 var(--gold)}
+::selection{background:#FDD3B9;color:#10302F}
+</style><div id="app"></div><input type="file" id="file" accept="image/*,video/*,application/pdf,text/plain,text/csv,text/markdown,application/json,.csv,.md,.txt,.json,.pdf" hidden><script type="application/json" id="data">{"site": {"name": "Erwin Fajariansyah", "strip": "PPL Mandiri · Informatika · Fase F", "role": "Calon Guru Informatika", "program": "PPG Calon Guru · Universitas Muhammadiyah Surakarta 2026", "tagline": "Dokumentasi perencanaan, pelaksanaan, dan refleksi empat siklus praktik mengajar mandiri Informatika kelas XII di SMA Negeri 1 Colomadu.", "photo": {"src": "berkas/foto/erwin2.jpg", "label": "Foto diri", "caption": "", "kind": "img", "name": "erwin2.jpeg"}, "footer": "PPG Calon Guru UMS 2026"}, "pages": [{"id": "beranda", "nav": "Beranda", "title": "Beranda", "hero": true, "sections": [{"heading": "Selamat datang", "lead": "", "blocks": [{"type": "p", "text": "Assalamu'alaikum warahmatullahi wabarakatuh.\n\nSelamat datang di e-portofolio Praktik Pengalaman Lapangan (PPL) Mandiri saya. Di sini saya mendokumentasikan empat siklus praktik mengajar Informatika di kelas XII SMA Negeri 1 Colomadu, mulai dari rancangan pembelajaran, pelaksanaan di kelas, hasil belajar peserta didik, sampai refleksi saya sebagai calon guru.\n\nSetiap analisis ditulis dengan pola yang sama: ringkasan, apa yang saya buat, apa yang sudah berjalan baik, apa yang masih kurang, dan apa yang akan saya perbaiki."}]}, {"heading": "Identitas PPL Mandiri", "blocks": [{"type": "kv", "rows": [["Nama", "Erwin Fajariansyah"], ["NIM / No. Peserta", "A971260024"], ["Program", "PPG Calon Guru · FKIP Universitas Muhammadiyah Surakarta"], ["Sekolah mitra", "SMA Negeri 1 Colomadu"], ["Mata pelajaran", "Informatika"], ["Kelas / Fase", "XII / Fase F · Semester Ganjil"], ["Jumlah peserta didik", "36"], ["Guru pamong", "Ahmat Irvan, S.Kom"], ["Dosen pembimbing", "Irma Yuliana, S.T., M.M., M.Eng"]]}]}]}, {"id": "profil", "nav": "Profil Guru", "eyebrow": "Profil", "title": "Profil Guru", "blurb": "Tentang saya, filosofi mengajar, dan sekolah mitra PPL Mandiri.", "intro": "Mengenal latar belakang, nilai, dan tempat saya belajar menjadi guru.", "sections": [{"heading": "Tentang saya", "blocks": [{"type": "img", "src": "berkas/foto/erwin3.jpg", "label": "Foto profil", "caption": "", "kind": "img", "name": "erwin3.jpeg"}, {"type": "p", "text": "Saya Erwin Fajariansyah, S.Kom., lulusan program studi Sistem Informasi, STMIK Widya Pratama Pekalongan, tahun 2024. Saat ini saya mengikuti Pendidikan Profesi Guru (PPG) Calon Guru gelombang 1 2025 di Universitas Muhammadiyah Surakarta, bidang studi Informatika. Saya memiliki latar belakang pendidikan di bidang teknik dan mulai mengajar sejak semester tiga kuliah. Selama tiga tahun, saya mengajar Informatika di jenjang SMP dan satu tahun di jenjang SD. Selain mengajar, pengalaman berorganisasi di Ikatan Pelajar Muhammadiyah (IPM) membantu saya menemukan passion dalam berbicara di depan umum, mengembangkan komunikasi, serta mempelajari manajemen organisasi. Pengalaman tersebut menjadi bekal saya dalam membangun pembelajaran yang komunikatif, terarah, dan menarik bagi siswa."}, {"type": "sub", "title": "Riwayat pendidikan", "text": "", "tone": ""}, {"type": "list", "items": ["MIM Donowangun 01, 2008-2014", "MTS Muhammadiyah Darusslam Talun, 2014-2017", "SMK Muhammadiyah Talun, 2017-2020", "S1 Sistem Informasi, STMIK Widya Pratama Pekalongan, 2020-2024", "PPG Calon Guru, Universitas Muhammadiyah Surakarta, 2025"]}, {"type": "kv", "rows": [["Email", "erwinfajariansyah455@gmail.com"], ["WhatsApp", "0857-0225-6021"]]}], "lead": "Latar belakang pendidikan dan pengalaman saya."}, {"heading": "Filosofi mengajar", "blocks": [{"type": "img", "src": "berkas/foto/WhatsApp-Image-2026-10-30-at-09-48-36.jpg", "label": "Foto saat mengajar", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 09.48.36.jpeg"}, {"type": "p", "text": "Saya meyakini bahwa pembelajaran yang bermakna berawal dari peserta didik. Sejalan dengan pemikiran Ki Hajar Dewantara, guru berperan menuntun kodrat peserta didik agar mereka tumbuh sesuai potensinya. Dalam pelajaran Informatika, saya ingin peserta didik tidak hanya menjadi pengguna teknologi, tetapi juga pemecah masalah yang kritis, kreatif, dan beretika digital. Karena itu saya mengutamakan masalah nyata yang dekat dengan kehidupan mereka, aktivitas yang membuat mereka berpikir (termasuk aktivitas tanpa komputer), serta umpan balik yang membangun."}, {"type": "sub", "title": "Nilai yang saya pegang di kelas", "text": "", "tone": ""}, {"type": "list", "items": ["Berpihak pada peserta didik", "Belajar melalui masalah nyata dan praktik", "Kolaborasi dan saling menghargai", "Refleksi berkelanjutan"]}], "lead": "Ing ngarso sung tulodho, ing madyo mangun karso, tut wuri handayani"}, {"heading": "Sekolah mitra PPL Mandiri", "blocks": [{"type": "img", "src": "berkas/foto/2.jpg", "label": "Foto SMA Negeri 1 Colomadu", "caption": "", "kind": "img", "name": "2.jpg"}, {"type": "p", "text": "SMA Negeri 1 Colomadu terletak di Jl. Fajar Indah, Kelurahan Baturan, Kecamatan Colomadu, Kabupaten Karanganyar, Jawa Tengah. Selama PPL Mandiri, saya mengajar Informatika di kelas XII dengan bimbingan Ahmat Irvan, S.Kom. Sekolah ini memiliki laboratorium komputer yang dipakai untuk pembelajaran Informatika, dan setiap rombel kelas XII berisi sekitar 36 peserta didik."}, {"type": "kv", "rows": [["Alamat", "Jl. Fajar Indah, Baturan, Colomadu, Karanganyar, Jawa Tengah 57171"], ["Website", "smancolomadu.sch.id"], ["Kelas yang diampu", "XII (± 36 peserta didik)"]]}, {"type": "link", "kind": "map", "label": "Lokasi SMA Negeri 1 Colomadu di Google Maps", "url": "https://www.google.com/maps/search/?api=1&query=SMA+Negeri+1+Colomadu", "embed": false}], "lead": "SMA Negeri 1 Colomadu"}]}, {"id": "perangkat", "nav": "Perangkat Ajar", "eyebrow": "Artefak · Siklus 1–4", "title": "Perangkat Ajar PPL Mandiri", "numbered": false, "blurb": "Empat modul ajar Informatika kelas XII beserta tujuan, media, LKPD, dan asesmen tiap siklus.", "intro": "Empat modul ajar Informatika kelas XII yang saya rancang untuk SMA Negeri 1 Colomadu. Siklus 1 membahas dampak sosial informatika (AI, Big Data, IoT, keamanan siber). Siklus 2 dan 3 adalah proyek Arduino Uno di simulator Wokwi, dari proyek kelompok lampu lalu lintas ke proyek individu running text. Siklus 4 menguatkan cara berpikir komputasional untuk memecahkan persoalan sehari-hari.", "sections": [{"heading": "Siklus 1 · Informatika Sekarang dan Masa Depan", "lead": "Mengajak peserta didik mengkaji secara kritis teknologi yang mereka pakai setiap hari: AI, Big Data, IoT, dan ancaman siber.", "blocks": [{"type": "kv", "rows": [["Topik", "Informatika Sekarang dan Masa Depan"], ["Elemen CP", "Dampak Sosial Informatika (DSI)"], ["Kelas / Fase", "XII / F · Semester Ganjil · 36 peserta didik"], ["Alokasi waktu", "3 pertemuan × 2 JP (6 JP)"], ["Model", "Problem Based Learning (PBL), pendekatan Deep Learning"], ["Media", "Slide Canva, Mentimeter, Quizizz, Google Classroom/Form, kartu studi kasus, kartu pesan “Asli atau Jebakan?”"], ["LKPD", "Kelompok: LKPD 1 “AI di Sekitar Kita”, LKPD 2 “Jejak Data di Sekitar Kita”, LKPD 3 “Aman di Ruang Digital & Inovasi Masa Depan”"], ["Asesmen", "Kuis Quizizz, LKPD 1–2 + rubrik 5 aspek, proyek infografis + idea pitching (rubrik 5 aspek), tes 10 PG + 2 uraian, refleksi; KKTP 75"]]}, {"type": "sub", "title": "Tujuan pembelajaran", "text": "", "tone": ""}, {"type": "list", "items": ["Menjelaskan karakteristik Revolusi Industri 4.0 dan mengkaji secara kritis penerapan serta dampak AI di masyarakat.", "Menganalisis konsep Big Data dan IoT melalui studi kasus, termasuk manfaat dan risiko privasinya.", "Mengidentifikasi ancaman keamanan siber beserta pencegahannya, lalu merumuskan gagasan inovasi informatika yang aman, etis, dan bermanfaat."]}, {"type": "sub", "title": "Catatan desain", "text": "Setiap pertemuan dibuka dengan pengalaman digital peserta didik sendiri: beranda TikTok/YouTube, tarif ojek daring, dan pesan undangan berformat APK. Studi kasus dibuat dekat dengan Colomadu dan Karanganyar, misalnya sensor pintar di lahan cabai. Rangkaian ditutup dengan proyek infografis inovasi dan idea pitching.", "tone": ""}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 1 – Informatika Sekarang dan Masa Depan (termasuk LKPD dan asesmen)", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-1-Modul-Ajar-Erwin-Fajariansyah.pdf", "name": "Siklus_1_Modul_Ajar_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 1 – Informatika Sekarang dan Masa Depan", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Informatika-Sekarang-dan-Masa-Depan-XII-2.pdf", "name": "Presentasi_Informatika_Sekarang_dan_Masa_Depan_XII 2.pdf"}]}, {"heading": "Siklus 2 · Sistem Komputer dan Simulasi Lampu Lalu Lintas dengan Arduino Uno", "lead": "Proyek kelompok: merancang, memprogram, dan menguji simulasi lampu lalu lintas Arduino Uno di Wokwi.", "blocks": [{"type": "kv", "rows": [["Topik", "Sistem Komputer dan Simulasi Lampu Lalu Lintas dengan Arduino Uno"], ["Elemen CP", "Sistem Komputer"], ["Kelas / Fase", "XII / F · Semester Ganjil · 36 peserta didik"], ["Alokasi waktu", "3 pertemuan × 5 JP (15 JP)"], ["Model", "Project Based Learning (PjBL), pendekatan Deep Learning, TPACK, Experiential Learning, PSE–CASEL"], ["Media", "Wokwi Simulator, PPT interaktif, video lampu lalu lintas, Google Form/Quizizz"], ["LKPD", "Kelompok 3–4 orang: Bagian A (LED berkedip), B (rancangan proyek), C (debugging dan tombol penyeberang), D (refleksi dan PSE)"], ["Asesmen", "Diagnostik 5 soal, 5 soal uraian, rubrik praktik/proyek 5 aspek, rubrik presentasi, observasi sikap dan PSE; KKTP berbentuk interval nilai"]]}, {"type": "sub", "title": "Tujuan pembelajaran", "text": "", "tone": ""}, {"type": "list", "items": ["Menjelaskan konsep sistem komputer (hardware, software, brainware) serta hubungan input–proses–output.", "Menjelaskan fungsi Arduino Uno sebagai single board controller dan mengidentifikasi komponennya.", "Merancang, memprogram, menguji, dan mempresentasikan simulasi lampu lalu lintas menggunakan Arduino Uno pada Wokwi."]}, {"type": "sub", "title": "Catatan desain", "text": "Lampu lalu lintas dipakai sebagai contoh nyata input–proses–output. Proyek naik bertahap: LED berkedip, tiga lampu bergantian, lalu tombol penyeberang sebagai input dengan digitalRead(). Setiap error dicatat di tabel debugging gejala–dugaan–bukti–solusi–hasil.", "tone": ""}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 2 – Sistem Komputer dan Simulasi Lampu Lalu Lintas dengan Arduino Uno (termasuk LKPD dan asesmen)", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-2-Modul-Arduino-Lampu-Lalu-Lintas-Erwin-Fajariansyah.pdf", "name": "Siklus_2_Modul_Arduino_Lampu_Lalu_Lintas_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 2 – Lampu Lalu Lintas Arduino", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Sistem-Komputer-Arduino-Lampu-Lalu-Lintas-XII.pdf", "name": "Presentasi_Sistem_Komputer_Arduino_Lampu_Lalu_Lintas_XII.pdf"}]}, {"heading": "Siklus 3 · Running Text LED Matrix dan Proyek Individu Berbasis Arduino Uno", "lead": "Proyek individu: membuat papan informasi digital berupa running text LED Matrix di Wokwi.", "blocks": [{"type": "kv", "rows": [["Topik", "Running Text LED Matrix dan Proyek Individu Berbasis Arduino Uno"], ["Elemen CP", "Sistem Komputer"], ["Kelas / Fase", "XII / F · Semester Ganjil · 36 peserta didik"], ["Alokasi waktu", "3 pertemuan × 5 JP (15 JP)"], ["Model", "Project Based Learning (PjBL), pendekatan Deep Learning, TPACK, Experiential Learning, PSE–CASEL"], ["Media", "Wokwi Simulator, LED Matrix MAX7219 (4 modul 8×8), library MD_Parola, PPT interaktif, video demonstrasi"], ["LKPD", "Individu: running text dasar, rancangan “Papan Informasi Digital”, eksperimen efek dan kecepatan, daftar periksa uji akhir"], ["Asesmen", "5 soal uraian, rubrik praktik, rubrik proyek individu dan presentasi, observasi sikap dan PSE; KKTP berbentuk interval nilai"]]}, {"type": "sub", "title": "Tujuan pembelajaran", "text": "", "tone": ""}, {"type": "list", "items": ["Menjelaskan prinsip kerja LED Matrix sebagai perangkat output dan penggunaan library pada Arduino.", "Membuat dan memodifikasi program running text pada LED Matrix menggunakan Wokwi.", "Merancang, mengembangkan, menguji, dan mempresentasikan proyek individu berbasis Arduino Uno."]}, {"type": "sub", "title": "Catatan desain", "text": "Melanjutkan Siklus 2, tetapi beralih dari proyek kelompok ke proyek individu. Pemantiknya papan running text di masjid dan toko. Peserta didik yang sudah mahir menjadi tutor sebaya.", "tone": ""}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 3 – Running Text LED Matrix dan Proyek Individu Berbasis Arduino Uno (termasuk LKPD dan asesmen)", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-3-Modul-Arduino-Running-Text-Erwin-Fajariansyah.pdf", "name": "Siklus_3_Modul_Arduino_Running_Text_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 3 – Running Text LED Matrix", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Running-Text-LED-Matrix-Arduino-Uno-XII2.pdf", "name": "Presentasi_Running_Text_LED_Matrix_Arduino_Uno_XII2.pdf"}]}, {"heading": "Siklus 4 · Pengertian, Manfaat, dan Cara Berpikir Komputasional", "lead": "Menguatkan cara berpikir runtut lewat persoalan sehari-hari: perjalanan study tour dan jadwal piket kelas.", "blocks": [{"type": "kv", "rows": [["Topik", "Pengertian, Manfaat, dan Cara Berpikir Komputasional"], ["Elemen CP", "Berpikir Komputasional (BK)"], ["Kelas / Fase", "XII / F · Semester Ganjil · 36 peserta didik"], ["Alokasi waktu", "1 pertemuan × 3 JP (135 menit)"], ["Model", "Problem Based Learning (PBL), pendekatan Deep Learning (memahami, mengaplikasikan, merefleksikan)"], ["Media", "PPT interaktif, Canva for Education, Padlet/Jamboard, Quizizz/Kahoot!, kartu studi kasus, kertas plano"], ["LKPD", "Kelompok 4–5 orang: kasus perjalanan study tour Rafi dan jadwal piket kelas satu bulan"], ["Asesmen", "Diagnostik lisan, rubrik pengetahuan, sikap, dan keterampilan (skala 1–4), kuis formatif, 5 soal uraian HOTS; KKTP berbentuk interval nilai"]]}, {"type": "sub", "title": "Tujuan pembelajaran", "text": "", "tone": ""}, {"type": "list", "items": ["Menjelaskan pengertian dan empat komponen berpikir komputasional dengan bahasa sendiri.", "Menganalisis manfaat berpikir komputasional dalam persoalan sehari-hari dan dunia digital melalui studi kasus.", "Merancang langkah berpikir komputasional untuk persoalan kontekstual dan mempresentasikannya secara logis."]}, {"type": "sub", "title": "Catatan desain", "text": "Orientasi masalah memakai cara aplikasi navigasi menemukan rute tercepat. Kelompok menerapkan dekomposisi, pengenalan pola, abstraksi, dan algoritma untuk menyusun jadwal piket, lalu membandingkan efisiensi solusi antarkelompok.", "tone": ""}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 4 – Pengertian, Manfaat, dan Cara Berpikir Komputasional (termasuk LKPD dan asesmen)", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-4-Modul-Ajar-Berpikir-Komputasional-Erwin-Fajariansyah.pdf", "name": "Siklus_4_Modul_Ajar_Berpikir_Komputasional_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 4 – Berpikir Komputasional", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Berpikir-Komputasional-Kelas-XII.pdf", "name": "Presentasi_Berpikir_Komputasional_Kelas_XII.pdf"}]}]}, {"id": "lk3", "nav": "LK-3", "eyebrow": "LK 3 · E-Portfolio 1 · Siklus 2", "title": "Analisis Praktik Mengajar Mandiri Siklus 2", "numbered": true, "blurb": "Analisis rancangan, materi, media, pelaksanaan, dan instrumen penilaian Siklus 2 (Arduino lampu lalu lintas).", "intro": "E-Portfolio 1 berisi analisis praktik mengajar mandiri saya dengan modul “Sistem Komputer dan Simulasi Lampu Lalu Lintas dengan Arduino Uno” di kelas XII SMA Negeri 1 Colomadu. Setiap bagian dibuka dengan ringkasan, lalu membahas kesesuaian, kekuatan, kelemahan, temuan di kelas, dan rencana perbaikan.", "sections": [{"heading": "Analisis produk rancangan pembelajaran", "lead": "Apakah modul ajar Siklus 2 lengkap, sesuai CP dan TP, cocok untuk peserta didik kelas XII, dan bisa dijalankan di kelas?", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Modul Siklus 2 sudah lengkap dan runtut: TP naik dari memahami sistem komputer sampai merancang proyek, dan proyeknya diambil dari benda yang dilihat peserta didik setiap hari. Kelemahan utamanya ada pada hasil pemetaan asesmen awal yang belum diisi, identitas modul yang belum seragam dengan modul lain, dan kegiatan inti 180 menit yang perlu target antara.", "tone": "key"}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 2 – Sistem Komputer dan Simulasi Lampu Lalu Lintas dengan Arduino Uno", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-2-Modul-Arduino-Lampu-Lalu-Lintas-Erwin-Fajariansyah.pdf", "name": "Siklus_2_Modul_Arduino_Lampu_Lalu_Lintas_Erwin_Fajariansyah.pdf"}, {"type": "kv", "rows": [["Sekolah", "SMA Negeri 1 Colomadu"], ["Kelas", "XII · 36 peserta didik"], ["Tanggal pelaksanaan", "Selasa, 4, 11 dan 8 Agustus 2026"], ["Elemen CP", "Sistem Komputer"], ["Alokasi waktu", "3 pertemuan × 5 JP (pendahuluan 20 menit, inti 175–180 menit, penutup 25–30 menit)"], ["Model", "Project Based Learning (PjBL), pendekatan Deep Learning, TPACK, Experiential Learning, PSE–CASEL"], ["KKTP", "Interval: 86–100 sangat baik, 76–85 baik, 66–75 cukup, \u003c 66 perlu bimbingan"]]}, {"type": "sub", "title": "Isi modul", "text": "Modul disusun mengikuti Kurikulum Merdeka. Isinya: identitas, Dimensi Profil Lulusan, pemetaan asesmen awal, tujuan pembelajaran dan TP harian, pemahaman bermakna, pertanyaan pemantik, rencana asesmen, urutan kegiatan tiga pertemuan, refleksi guru dan peserta didik, pengayaan dan remedial, glosarium, serta daftar pustaka. Lampirannya memuat LKPD Bagian A–D, asesmen (diagnostik, formatif, KKTP, rubrik, observasi sikap/PSE), pengayaan–remedial, bahan bacaan, media, jurnal refleksi guru, dan survei siswa.", "tone": ""}, {"type": "sub", "title": "Kesesuaian dengan CP dan TP", "text": "CP elemen Sistem Komputer meminta peserta didik memahami hubungan input–proses–output dan menerapkannya lewat pemrograman mikrokontroler. CP ini saya turunkan menjadi tiga TP yang naik bertahap, lalu dipecah menjadi sembilan TP harian dengan level kognitif yang jelas (C2, P3, C4, P4, C5).", "tone": ""}, {"type": "list", "items": ["Memahami: menjelaskan sistem komputer dan hubungan input–proses–output.", "Mengenali: menjelaskan fungsi Arduino Uno dan mengidentifikasi komponennya.", "Mencipta: merancang, memprogram, menguji, dan mempresentasikan simulasi lampu lalu lintas."]}, {"type": "sub", "title": "Kesesuaian dengan karakteristik peserta didik", "text": "Kompetensi awal yang diharapkan realistis untuk kelas XII: bisa mengoperasikan laptop dan browser, mengenal algoritma sederhana, dan memahami input–output. Wokwi dipilih karena berjalan di browser, sehingga semua kelompok bisa merangkai tanpa membeli komponen fisik. Kelompok 3–4 orang yang heterogen membuat 36 peserta didik terbagi ke sekitar 9–12 kelompok, cukup kecil agar setiap anggota memegang peran.", "tone": ""}, {"type": "sub", "title": "Langkah pembelajaran sesuai sintaks PjBL", "text": "", "tone": ""}, {"type": "steps", "items": [{"title": "Penentuan pertanyaan mendasar", "text": "“Bagaimana membuat sistem lampu lalu lintas otomatis?” Peserta didik mengidentifikasi input, proses, dan output pada lampu lalu lintas."}, {"title": "Mendesain perencanaan proyek", "text": "Kelompok membagi peran, menentukan pin, serta menyusun urutan dan durasi nyala lampu (LKPD Bagian B)."}, {"title": "Menyusun jadwal dan mengembangkan proyek", "text": "Kelompok menyepakati jadwal kerja, menyusun rangkaian tiga LED di Wokwi, dan menulis programnya."}, {"title": "Memonitor perkembangan proyek", "text": "Kelompok menjalankan simulasi, mencatat error di tabel debugging, memperbaiki, dan menguji ulang. Guru memantau dengan lembar observasi."}, {"title": "Menguji hasil proyek", "text": "Setiap kelompok mendemonstrasikan simulasi yang sudah ditambah tombol penyeberang dan menjelaskan logika programnya."}, {"title": "Mengevaluasi pengalaman belajar", "text": "Diskusi reflektif tentang apa yang berhasil, kendala, dan perbaikan, dilanjutkan refleksi dan penilaian diri."}]}, {"type": "sub", "title": "Temuan saat diterapkan", "text": "Beberapa peserta didik masih kesulitan saat menuliskan kode program. Ketika error terjadi, sebagian dari mereka masih bingung bagaimana cara mengatasinya. Di sinilah peran guru sangat penting untuk membimbing peserta didik menemukan penyebab error dan memperbaikinya.", "tone": ""}, {"type": "sub", "title": "Rencana perbaikan", "text": "Mengisi pemetaan asesmen awal dari Google Form diagnostik, lalu memakainya untuk membentuk kelompok.\nMenyamakan nama sekolah dan nomor modul dengan modul siklus lain.\nMembagi kegiatan inti ke target per 45 menit dan menampilkan pengatur waktu.\nMengisi tautan PPT, contoh Wokwi, dan Google Form di lampiran.", "tone": "next"}]}, {"heading": "Analisis materi pembelajaran", "lead": "Apakah materi sistem komputer dan Arduino yang saya susun benar, cukup dalam untuk kelas XII, dan dekat dengan kehidupan peserta didik?", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Materi sudah akurat dan tersusun bertahap dari konsep input–proses–output sampai program dengan tombol. Contoh kode langsung bisa dijalankan di Wokwi. Bagian yang berpotensi sulit adalah logika tombol INPUT_PULLUP yang terbalik (LOW saat ditekan).", "tone": "key"}, {"type": "sub", "title": "Isi bahan bacaan", "text": "", "tone": ""}, {"type": "list", "items": ["Sistem komputer dan konsep input–proses–output, dibandingkan antara komputer dan lampu lalu lintas.", "Arduino Uno (ATmega328P, 14 pin digital) dan simulator Wokwi.", "Struktur program Arduino: setup(), loop(), pinMode(), digitalWrite(), delay().", "Program lampu lalu lintas: rangkaian tiga LED dengan resistor 220 Ω di pin 13, 12, dan 11.", "Pengembangan tombol penyeberang dengan digitalRead() dan INPUT_PULLUP.", "Langkah debugging: gejala, dugaan penyebab, bukti, solusi dan uji ulang."]}, {"type": "table", "head": ["Tahap", "Pada komputer", "Pada lampu lalu lintas Arduino"], "rows": [["Input", "Keyboard, mouse", "Tombol penyeberang (push button)"], ["Proses", "CPU menjalankan program", "Arduino Uno menjalankan sketch"], ["Output", "Monitor, speaker", "LED merah, kuning, hijau"]]}, {"type": "sub", "title": "Keakuratan dan kedalaman", "text": "Materi merujuk Buku Informatika SMA/MA Kelas XII Kemendikdasmen, dokumentasi resmi Arduino dan Wokwi, serta Banzi & Shiloh dan Monk. Kedalamannya pas untuk Fase F: peserta didik menulis program sendiri dan menambahkan input, tetapi belum masuk ke pemrograman tanpa delay atau beberapa jalur sekaligus (disimpan untuk pengayaan).", "tone": ""}, {"type": "sub", "title": "Keterkaitan dengan kehidupan peserta didik", "text": "Lampu lalu lintas dilihat peserta didik setiap berangkat sekolah, sehingga konsep input–proses–output terasa nyata. Pertanyaan “mengapa durasi lampu di tiap persimpangan berbeda?” membuka diskusi bahwa durasi adalah keputusan yang ditulis dalam program.", "tone": ""}, {"type": "sub", "title": "Rencana perbaikan", "text": "Menambahkan ilustrasi sederhana cara kerja INPUT_PULLUP.\nMenambahkan catatan tentang keterbatasan delay() sebagai jembatan ke pengayaan.\nMelengkapi glosarium dengan istilah pin dan tegangan.", "tone": "next"}]}, {"heading": "Analisis media pembelajaran", "lead": "Media apa yang saya pakai, untuk apa, dan seberapa jauh media itu membantu peserta didik belajar?", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Wokwi menjadi media utama karena peserta didik bisa merangkai, memprogram, dan langsung melihat hasilnya tanpa komponen fisik. Video dan PPT menuntun alur, sedangkan Google Form/Quizizz dipakai untuk asesmen. Ketergantungan pada internet dan jumlah laptop adalah risiko utamanya.", "tone": "key"}, {"type": "gallery", "items": [{"src": "berkas/foto/Screenshot-2026-10-26-115103.png", "label": "Tampilan Wokwi saat praktik", "caption": "", "kind": "img", "name": "Screenshot 2026-10-26 115103.png"}, {"src": "berkas/dokumen/Presentasi-Sistem-Komputer-Arduino-Lampu-Lalu-Lintas-XII.pdf", "label": "Slide PPT Siklus 2", "caption": "", "kind": "pdf", "name": "Presentasi_Sistem_Komputer_Arduino_Lampu_Lalu_Lintas_XII.pdf"}, {"src": "berkas/dokumen/LKPD-siklus-2.pdf", "label": "LKPD Siklus 2", "caption": "", "kind": "pdf", "name": "LKPD siklus 2.pdf"}]}, {"type": "table", "head": ["Media", "Fungsi", "Digunakan pada"], "rows": [["PPT interaktif", "Apersepsi dan penguatan konsep", "Pendahuluan dan penutup"], ["Video lampu lalu lintas", "Stimulus fenomena nyata", "Apersepsi pertemuan 1"], ["Wokwi Simulator", "Merangkai dan menjalankan program", "Kegiatan inti pertemuan 1–3"], ["LKPD", "Rancangan, debugging, refleksi", "Kegiatan inti pertemuan 1–3"]]}, {"type": "sub", "title": "Kesesuaian dengan tujuan dan materi", "text": "Wokwi sesuai dengan TP merancang dan menguji program, karena hasil kode langsung terlihat sebagai LED yang menyala. Ini mendukung siklus Experiential Learning: mencoba, menganalisis, merefleksikan error, lalu memperbaiki.", "tone": ""}, {"type": "sub", "title": "Keterlibatan peserta didik", "text": "Peserta didik antusias saat praktik. Mereka merasa senang ketika kode program berhasil dijalankan, dan saat gagal mereka mencoba lagi dengan bantuan guru maupun mengikuti instruksi dari guru.", "tone": ""}, {"type": "sub", "title": "Rencana perbaikan", "text": "Menyiapkan tautan Wokwi contoh dan file kode cadangan sebelum kelas dimulai.\nMenunjukkan satu Arduino dan LED fisik saat apersepsi agar peserta didik melihat bentuk aslinya.", "tone": "next"}]}, {"heading": "Analisis pelaksanaan pembelajaran di kelas", "lead": "Bagaimana pembelajaran Siklus 2 berjalan di kelas, apa yang berhasil, dan apa yang perlu saya perbaiki sebagai guru?", "blocks": [{"type": "gallery", "items": [{"src": "berkas/foto/Screenshot-2026-10-26-115353.png", "label": "Pendahuluan dan pertanyaan pemantik", "caption": "", "kind": "img", "name": "Screenshot 2026-10-26 115353.png"}, {"src": "berkas/foto/g.jpg", "label": "Kelompok merangkai di Wokwi", "caption": "", "kind": "img", "name": "g.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-26-at-11-56-32.jpg", "label": "Presentasi proyek kelompok", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-26 at 11.56.32.jpeg"}]}, {"type": "kv", "rows": [["Hari, tanggal", "5, 12, 19 Agustus 2026"], ["Kelas", "XII · 36 peserta didik"], ["Durasi", "3 × 5 JP"], ["Model", "Project Based Learning"]]}, {"type": "sub", "title": "Alur pembelajaran di kelas", "text": "", "tone": ""}, {"type": "steps", "items": [{"title": "Pertemuan 1 · Sistem komputer dan mengenal Arduino", "text": "Rencana: video lampu lalu lintas, diagnostik, identifikasi I–P–O, demonstrasi Wokwi, praktik LED berkedip, rancangan proyek kelompok."}, {"title": "Pertemuan 2 · Membuat simulasi lampu lalu lintas", "text": "Rencana: menyusun rangkaian tiga LED, menulis program, debugging dengan tabel, berbagi error yang sering muncul."}, {"title": "Pertemuan 3 · Pengembangan, pengujian, presentasi", "text": "Rencana: menambah tombol penyeberang, demonstrasi tiap kelompok, 5 soal uraian, refleksi."}]}]}, {"heading": "Instrumen penilaian dan analisisnya", "lead": "Alat penilaian apa yang saya rancang, bagaimana hasilnya, dan apa artinya bagi pembelajaran berikutnya?", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Setiap tujuan pembelajaran sudah punya alat ukur yang sesuai: soal uraian untuk konsep, rubrik praktik dan proyek untuk keterampilan, serta observasi untuk sikap dan PSE.", "tone": "key"}, {"type": "sub", "title": "Tujuan pembelajaran dan alat ukurnya", "text": "", "tone": ""}, {"type": "table", "head": ["Tujuan pembelajaran", "Ranah", "Instrumen", "Teknik"], "rows": [["Menjelaskan sistem komputer, I–P–O, dan Arduino", "Pengetahuan (C2)", "Soal uraian 5 butir", "Tertulis"], ["Menyusun rangkaian dan program lampu lalu lintas", "Keterampilan (P3)", "Rubrik praktik", "Unjuk kerja"], ["Debugging dan pengembangan dengan tombol", "Pengetahuan & keterampilan (C4/P4)", "LKPD + rubrik proyek", "Penilaian produk"], ["Mempresentasikan hasil", "Keterampilan (P4)", "Rubrik presentasi", "Observasi"], ["Kerja sama, disiplin, tanggung jawab", "Sikap", "Lembar observasi sikap/PSE", "Observasi"]]}, {"type": "sub", "title": "Tindak lanjut", "text": "Pengayaan untuk nilai ≥ KKTP: lampu lalu lintas dua jalur, mode kuning berkedip dengan buzzer, dan menjadi tutor sebaya.\nRemedial untuk nilai \u003c KKTP: penjelasan ulang I–P–O dan struktur program, praktik bertahap satu LED → dua LED → lampu lalu lintas, serta latihan debugging dengan pendampingan.", "tone": "next"}]}, {"heading": "Refleksi diri", "lead": "Apa yang saya pelajari dari Siklus 2 dan apa yang akan saya bawa ke siklus berikutnya.", "blocks": [{"type": "p", "text": "Siklus 2 menjadi pengalaman saya membimbing peserta didik kelas XII membuat proyek Arduino Uno di simulator Wokwi. Momen yang paling berkesan adalah ketika kode program kelompok berhasil dijalankan dan lampu lalu lintas menyala sesuai urutan. Peserta didik terlihat senang, dan kelompok yang belum berhasil tetap mau mencoba lagi.\n\nTantangan terbesar saya adalah mendampingi peserta didik yang masih kesulitan menulis kode program dan bingung ketika error muncul. Dari pengalaman ini saya belajar bahwa demonstrasi kode saja belum cukup. Guru perlu hadir saat proses debugging, memberi pertanyaan penuntun, dan membantu peserta didik menemukan sendiri letak kesalahannya. Saya juga menyadari bahwa mendampingi 36 peserta didik dalam proyek kelompok membutuhkan pengaturan waktu dan pemantauan yang lebih terencana."}, {"type": "sub", "title": "Komitmen untuk siklus berikutnya", "text": "", "tone": ""}, {"type": "list", "items": ["Menyiapkan contoh kode bertahap dan lembar bantuan berisi error yang sering muncul (salah pin, pinMode belum diatur, titik koma terlewat) agar peserta didik bisa mencoba memperbaiki sendiri sebelum bertanya.", "Membiasakan debugging dengan pertanyaan penuntun, bukan langsung memberikan jawaban.", "Melibatkan peserta didik yang sudah mahir sebagai tutor sebaya supaya pendampingan menjangkau seluruh kelompok.", "Membagi kegiatan inti ke target per 45 menit agar kemajuan setiap kelompok lebih mudah dipantau."]}]}]}, {"id": "uts", "nav": "UTS", "eyebrow": "UTS · E-Portfolio", "title": "Produk Terbaik: Pengertian, Manfaat, dan Cara Berpikir Komputasional", "numbered": true, "blurb": "Modul ajar berpikir komputasional beserta analisis komponen dan pelaksanaannya di kelas.", "intro": "Modul ini mengajak peserta didik kelas XII mengenali dan memakai cara berpikir komputasional, yaitu dekomposisi, pengenalan pola, abstraksi, dan algoritma, untuk memecahkan persoalan sehari-hari seperti menyusun jadwal piket kelas dan merencanakan perjalanan study tour.", "sections": [{"heading": "Rancangan pembelajaran terbaik", "lead": "Mengapa modul berpikir komputasional layak menjadi produk terbaik, dan bagaimana kualitas setiap komponennya.", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Modul ini dipilih karena ringkas, fokus pada satu konsep inti, dan memakai persoalan yang dialami peserta didik sendiri. Kegiatannya mengikuti lima sintaks PBL yang dipetakan ke tiga aktivitas Deep Learning (memahami, mengaplikasikan, merefleksikan), dan diferensiasinya sudah dirancang sejak awal. Bagian yang masih perlu dikembangkan adalah hasil pemetaan asesmen awal dan waktu presentasi yang padat.", "tone": "key"}, {"type": "link", "kind": "pdf", "label": "Modul Ajar – Pengertian, Manfaat, dan Cara Berpikir Komputasional (termasuk LKPD dan asesmen)", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-4-Modul-Ajar-Berpikir-Komputasional-Erwin-Fajariansyah.pdf", "name": "Siklus_4_Modul_Ajar_Berpikir_Komputasional_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) – Berpikir Komputasional", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Berpikir-Komputasional-Kelas-XII.pdf", "name": "Presentasi_Berpikir_Komputasional_Kelas_XII.pdf"}, {"type": "kv", "rows": [["Sekolah", "SMA Negeri 1 Colomadu"], ["Kelas / Fase", "XII / F · Semester Ganjil · 36 peserta didik"], ["Tanggal pelaksanaan", "6 Oktober 2026"], ["Elemen CP", "Berpikir Komputasional (BK)"], ["Alokasi waktu", "1 pertemuan × 3 JP (135 menit)"], ["Model", "Problem Based Learning (PBL), pendekatan Deep Learning"], ["KKTP", "Interval: 86–100 sangat baik, 76–85 baik, 66–75 cukup, \u003c 66 perlu bimbingan"]]}, {"type": "sub", "title": "Alasan pemilihan", "text": "Pertanyaan pemantiknya dekat dengan keseharian peserta didik: menyusun jadwal belajar dan les yang padat, membedakan “asal mencoba” dengan berpikir runtut, dan cara aplikasi ojek daring menemukan rute tercepat. LKPD memakai dua kasus kontekstual, yaitu perjalanan study tour Rafi ke tiga kota dan jadwal piket kelas selama satu bulan. Modul juga menghubungkan berpikir komputasional dengan mata pelajaran lain (Matematika, Bahasa Indonesia, IPS/Ekonomi, Seni/Prakarya), sehingga peserta didik melihat bahwa cara berpikir ini bukan hanya milik programmer.", "tone": ""}, {"type": "sub", "title": "Identitas, CP, dan TP", "text": "CP elemen Berpikir Komputasional menurut Keputusan Kepala BSKAP Nomor 046/H/KR/2025 diturunkan menjadi tiga TP yang naik bertahap menurut taksonomi SOLO: menjelaskan pengertian dan empat komponen (C2, unistructural), menganalisis manfaatnya lewat studi kasus (C4, relational), dan merancang langkah penyelesaian persoalan kontekstual (C6, extended abstract). Empat TP harian menyebut kegiatan dan ukurannya, misalnya “menganalisis minimal tiga manfaat berpikir komputasional pada persoalan nyata”.", "tone": ""}, {"type": "sub", "title": "Model dan langkah pembelajaran", "text": "", "tone": ""}, {"type": "steps", "items": [{"title": "Memahami · Orientasi masalah (15 menit)", "text": "Guru menampilkan studi kasus aplikasi navigasi yang mencari rute tercepat dan bertanya informasi apa yang diolah serta langkah berpikir apa yang dilakukan aplikasi itu."}, {"title": "Mengaplikasikan · Mengorganisasi peserta didik (10 menit)", "text": "Guru membagikan LKPD dan kartu studi kasus. Kelompok 4–5 orang membagi peran: ketua, pencatat, penggambar diagram, presenter."}, {"title": "Mengaplikasikan · Membimbing penyelidikan (35 menit)", "text": "Kelompok menerapkan dekomposisi, pengenalan pola, abstraksi, dan algoritma. Guru berkeliling dengan pertanyaan penuntun, misalnya “Informasi mana yang sebenarnya tidak memengaruhi jawaban?”"}, {"title": "Mengaplikasikan · Menyajikan hasil karya (30 menit)", "text": "Kelompok menyusun diagram atau algoritma di kertas plano/Canva lalu mempresentasikannya. Kelompok lain memberi satu apresiasi dan satu pertanyaan."}, {"title": "Merefleksikan · Menganalisis dan mengevaluasi (15 menit)", "text": "Kelas membandingkan efisiensi solusi antarkelompok, meluruskan miskonsepsi, lalu mengerjakan kuis formatif Quizizz/Kahoot!."}]}, {"type": "sub", "title": "Media dan bahan ajar", "text": "PPT interaktif menuntun alur, Padlet/Jamboard dipakai untuk curah pendapat, Canva for Education untuk diagram dan flowchart, serta Quizizz/Kahoot! untuk kuis formatif. Bahan bacaan memuat pengertian berpikir komputasional, empat komponennya, manfaatnya, enam langkah penerapan (memahami persoalan sampai menguji dan memperbaiki solusi), dan contoh penerapan pada penyusunan jadwal ujian.", "tone": ""}, {"type": "sub", "title": "Diferensiasi", "text": "Modul menyediakan media visual (peta konsep dan diagram) untuk gaya belajar visual, aktivitas unplugged untuk gaya kinestetik, diskusi lisan untuk gaya auditori, serta LKPD berinstruksi bertahap dan contoh terpandu (worked example) bagi peserta didik yang memerlukan pendampingan.", "tone": ""}, {"type": "sub", "title": "Asesmen", "text": "Asesmen diagnostik lewat pertanyaan pemantik lisan, ceklis kesiapan, dan angket gaya belajar.\nTiga rubrik terpisah berskala 1–4 untuk sikap, pengetahuan, dan keterampilan.\nPenilaian diri dan antarteman tercantum di LKPD.\nLima soal uraian HOTS sebagai sumatif, ditambah soal remedial pilihan ganda dan esai.", "tone": "plus"}]}, {"heading": "Pelaksanaan pembelajaran di kelas", "lead": "Bagaimana modul berjalan di kelas.", "blocks": [{"type": "gallery", "items": [{"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-03-53.jpg", "label": "Studi kasus aplikasi navigasi", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.03.53.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-04-32.jpg", "label": "Kelompok menyusun jadwal piket", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.04.32.jpeg"}, {"src": "berkas/video/WhatsApp-Video-2026-10-30-at-09-59-47.mp4", "label": "Presentasi diagram solusi", "caption": "", "kind": "video", "name": "WhatsApp Video 2026-10-30 at 09.59.47.mp4"}]}]}, {"heading": "Refleksi", "lead": "Saya belajar bahwa setiap peserta didik memiliki kemampuan dan kecepatan belajar yang berbeda. Masukan guru pamong menyadarkan saya pentingnya memperjelas instruksi, mengelola waktu, dan memberikan pendampingan yang sesuai kebutuhan murid agar pembelajaran lebih efektif dan bermakna.", "blocks": []}]}, {"id": "uas", "nav": "UAS · Siklus 2–4", "eyebrow": "UAS · E-Portfolio 2", "title": "Produk Praktik Mengajar Siklus 2–4", "numbered": true, "blurb": "Analisis Siklus 2, 3, dan 4: dua proyek Arduino dan berpikir komputasional.", "intro": "Pilih tab untuk melihat analisis setiap siklus.", "tabs": [{"label": "Siklus 2 · Lampu Lalu Lintas", "badge": "", "sections": [{"heading": "Rancangan pembelajaran", "lead": "Modul Siklus 2 mengajak kelompok membuat simulasi lampu lalu lintas dengan Arduino Uno di Wokwi.", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Proyek kelompok dengan sintaks PjBL yang lengkap: dari mengenal Arduino, merangkai tiga LED, sampai menambah tombol penyeberang. Kekuatannya ada pada proyek bertahap dan tabel debugging; kelemahannya pada pemetaan awal yang kosong dan rubrik yang masih per kelompok. Analisis lengkap ada di halaman LK-3.", "tone": "key"}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 2 – Sistem Komputer dan Simulasi Lampu Lalu Lintas dengan Arduino Uno", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-2-Modul-Arduino-Lampu-Lalu-Lintas-Erwin-Fajariansyah.pdf", "name": "Siklus_2_Modul_Arduino_Lampu_Lalu_Lintas_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 2 – Lampu Lalu Lintas Arduino", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Sistem-Komputer-Arduino-Lampu-Lalu-Lintas-XII.pdf", "name": "Presentasi_Sistem_Komputer_Arduino_Lampu_Lalu_Lintas_XII.pdf"}, {"type": "kv", "rows": [["Sekolah", "SMA Negeri 1 Colomadu"], ["Kelas", "XII · 36 peserta didik"], ["Tanggal pelaksanaan", "6, 13, 20 Juli 2026"], ["Elemen CP", "Sistem Komputer"], ["Alokasi waktu", "3 pertemuan × 5 JP"], ["Model", "Project Based Learning (PjBL), Deep Learning"], ["KKTP", "Interval (≥ 76 baik)"]]}, {"type": "sub", "title": "Kedudukan dalam rangkaian siklus", "text": "Siklus 2 memindahkan peserta didik dari mengkaji teknologi (Siklus 1) ke membuat teknologi sendiri. Konsep input–proses–output dibuktikan langsung lewat rangkaian dan program.", "tone": ""}, {"type": "sub", "title": "Asesmen", "text": "Rubrik praktik/proyek 5 aspek termasuk aspek debugging.\nLima soal uraian dengan kunci dan indikator jawaban.\nObservasi sikap dan PSE (disiplin, kerja sama, mengelola error, saling membantu).", "tone": "plus"}, {"type": "sub", "title": "Kelemahan", "text": "Pemetaan asesmen awal belum diisi dan identitas modul belum seragam.\nRubrik proyek per kelompok belum menangkap kontribusi tiap anggota.", "tone": "minus"}]}, {"heading": "Pelaksanaan pembelajaran di kelas", "lead": "Bagaimana modul berjalan di kelas.", "blocks": [{"type": "gallery", "items": [{"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-21-02.jpg", "label": "Demonstrasi Wokwi", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.21.02.jpeg"}, {"src": "berkas/foto/erwinn.jpg", "label": "Kelompok merangkai lampu lalu lintas", "caption": "", "kind": "img", "name": "erwinn.jpeg"}, {"src": "berkas/video/WhatsApp-Video-2026-10-30-at-10-29-27.mp4", "label": "Uji tombol penyeberang", "caption": "", "kind": "video", "name": "WhatsApp Video 2026-10-30 at 10.29.27.mp4"}]}, {"type": "sub", "title": "Rencana kegiatan", "text": "Pertemuan 1: I–P–O, demonstrasi Wokwi, LED berkedip, rancangan proyek.\nPertemuan 2: rangkaian tiga LED, program, debugging.\nPertemuan 3: tombol penyeberang, demonstrasi, soal uraian, refleksi.", "tone": ""}]}, {"heading": "Refleksi Siklus 2", "lead": "", "blocks": []}]}, {"label": "Siklus 3 · Running Text", "badge": "", "sections": [{"heading": "Rancangan pembelajaran", "lead": "Modul Siklus 3 mengajak setiap peserta didik membuat papan informasi digital berupa running text LED Matrix.", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Modul Siklus 3 melanjutkan Siklus 2 dengan tantangan lebih tinggi: proyek individu, library MD_Parola, dan array untuk beberapa pesan. Kekuatannya ada pada ruang kreativitas dan tutor sebaya; risikonya pada 36 proyek individu yang harus dipantau satu guru.", "tone": "key"}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 3 – Running Text LED Matrix dan Proyek Individu Berbasis Arduino Uno", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-3-Modul-Arduino-Running-Text-Erwin-Fajariansyah.pdf", "name": "Siklus_3_Modul_Arduino_Running_Text_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 3 – Running Text LED Matrix", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Running-Text-LED-Matrix-Arduino-Uno-XII2.pdf", "name": "Presentasi_Running_Text_LED_Matrix_Arduino_Uno_XII2.pdf"}, {"type": "kv", "rows": [["Sekolah", "SMA Negeri 1 Colomadu"], ["Kelas", "XII · 36 peserta didik"], ["Tanggal pelaksanaan", "5, 13, 19 Agustus 2026"], ["Elemen CP", "Sistem Komputer"], ["Alokasi waktu", "3 pertemuan × 5 JP"], ["Model", "Project Based Learning (PjBL), Deep Learning"], ["KKTP", "Interval (≥ 76 baik)"]]}, {"type": "sub", "title": "Kedudukan dalam rangkaian siklus", "text": "Siklus 3 berpindah dari output sederhana (LED) ke output yang menampilkan informasi (LED Matrix), dan dari kerja kelompok ke kerja individu. Asesmen awalnya memakai hasil formatif dan rubrik proyek Siklus 2.", "tone": ""}, {"type": "sub", "title": "Identitas, CP, dan TP", "text": "CP elemen Sistem Komputer diturunkan menjadi tiga TP: menjelaskan prinsip LED Matrix dan library, membuat dan memodifikasi running text, lalu merancang sampai mempresentasikan proyek individu. Sembilan TP harian memakai level kognitif C2 sampai C5.", "tone": ""}, {"type": "sub", "title": "Alur kegiatan inti", "text": "", "tone": ""}, {"type": "steps", "items": [{"title": "Pertanyaan mendasar", "text": "“Bagaimana membuat papan informasi digital untuk kelas kita?” Guru menjelaskan LED Matrix 8×8, MAX7219, dan konsep library."}, {"title": "Demonstrasi dan praktik dasar", "text": "Guru menghubungkan DIN–11, CLK–13, CS–10 di Wokwi; peserta didik mengganti teks dengan namanya sendiri."}, {"title": "Eksperimen efek", "text": "Peserta didik mengubah kecepatan, jeda, dan efek (PA_SCROLL_LEFT, PA_SCROLL_UP, PA_OPENING) lalu mencatat pengaruhnya."}, {"title": "Pengembangan proyek", "text": "Beberapa pesan ditampilkan bergantian dengan array; error dicatat di tabel debugging."}, {"title": "Uji dan presentasi", "text": "Setiap peserta didik mendemonstrasikan proyek sekitar 3 menit dan menerima umpan balik."}]}, {"type": "sub", "title": "Asesmen", "text": "Rubrik proyek individu menilai rangkaian, program, kreativitas, dan presentasi.\nAspek kreativitas membedakan proyek yang hanya mengganti teks dari proyek dengan efek dan fitur tambahan.", "tone": "plus"}, {"type": "sub", "title": "Kelemahan", "text": "Presentasi 36 proyek × 3 menit memakan sekitar 108 menit, sangat padat bersama finalisasi dan soal uraian.\nIdentitas modul belum seragam (nama sekolah dan label “MODUL 2”).", "tone": "minus"}]}, {"heading": "Pelaksanaan pembelajaran di kelas", "lead": "Bagaimana modul berjalan di kelas.", "blocks": [{"type": "gallery", "items": [{"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-21-03.jpg", "label": "Running text dasar di Wokwi", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.21.03.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-21-02-2.jpg", "label": "Eksperimen efek animasi", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.21.02.jpeg"}, {"src": "berkas/video/P5-Running-Text-Erwin-compressed-10MB.mp4", "label": "Presentasi proyek individu", "caption": "", "kind": "video", "name": "P5_Running_Text_Erwin_compressed_10MB.mp4"}]}, {"type": "sub", "title": "Rencana kegiatan", "text": "Pertemuan 1: LED Matrix, library MD_Parola, running text dasar, rancangan proyek.\nPertemuan 2: eksperimen efek, array pesan, pengembangan dan debugging.\nPertemuan 3: uji akhir, presentasi proyek, soal uraian, refleksi.", "tone": ""}]}, {"heading": "Refleksi Siklus 3", "lead": "", "blocks": []}]}, {"label": "Siklus 4 · Berpikir Komputasional", "badge": "", "sections": [{"heading": "Rancangan pembelajaran", "lead": "Modul Siklus 4 menguatkan cara berpikir komputasional lewat persoalan sehari-hari.", "blocks": [{"type": "sub", "title": "Ringkasan", "text": "Modul Siklus 4 ringkas (satu pertemuan 3 JP) dan berfokus pada empat komponen berpikir komputasional. Studi kasusnya dekat dengan peserta didik dan modulnya sudah memuat diferensiasi gaya belajar. Kelemahannya ada pada teks tindak lanjut pemetaan yang masih menyebut “contoh program”, padahal materi ini tidak memakai pemrograman.", "tone": "key"}, {"type": "link", "kind": "pdf", "label": "Modul Ajar Siklus 4 – Pengertian, Manfaat, dan Cara Berpikir Komputasional", "url": "", "embed": false, "src": "berkas/dokumen/Siklus-4-Modul-Ajar-Berpikir-Komputasional-Erwin-Fajariansyah.pdf", "name": "Siklus_4_Modul_Ajar_Berpikir_Komputasional_Erwin_Fajariansyah.pdf"}, {"type": "link", "kind": "pdf", "label": "Bahan ajar (PPT) Siklus 4 – Berpikir Komputasional", "url": "", "embed": false, "src": "berkas/dokumen/Presentasi-Berpikir-Komputasional-Kelas-XII.pdf", "name": "Presentasi_Berpikir_Komputasional_Kelas_XII.pdf"}, {"type": "kv", "rows": [["Sekolah", "SMA Negeri 1 Colomadu"], ["Kelas", "XII · 36 peserta didik"], ["Tanggal pelaksanaan", "6 Oktober 2026"], ["Elemen CP", "Berpikir Komputasional (BK)"], ["Alokasi waktu", "1 pertemuan × 3 JP (135 menit)"], ["Model", "Problem Based Learning, Deep Learning"], ["KKTP", "Interval (≥ 76 baik)"]]}, {"type": "sub", "title": "Kedudukan dalam rangkaian siklus", "text": "Setelah dua proyek Arduino, Siklus 4 mengajak peserta didik menamai cara berpikir yang sudah mereka pakai saat merancang dan men-debug program: dekomposisi, pengenalan pola, abstraksi, dan algoritma.", "tone": ""}, {"type": "sub", "title": "Model dan langkah pembelajaran", "text": "Sintaks PBL dibagi ke tiga aktivitas Deep Learning: memahami (studi kasus aplikasi navigasi, 15 menit), mengaplikasikan (pembagian peran dan penyelidikan kelompok, 45 menit), dan merefleksikan (presentasi, perbandingan efisiensi solusi, kuis formatif, 45 menit).", "tone": ""}, {"type": "sub", "title": "Diferensiasi", "text": "Modul menyiapkan media visual (peta konsep, diagram), aktivitas kinestetik (unplugged), diskusi lisan untuk gaya auditori, serta LKPD berinstruksi bertahap dan worked example untuk peserta didik yang perlu pendampingan.", "tone": ""}, {"type": "sub", "title": "Asesmen", "text": "Tiga rubrik terpisah skala 1–4 untuk sikap, pengetahuan, dan keterampilan.\n5 soal uraian HOTS sebagai sumatif dan soal remedial pilihan ganda.\nPenilaian diri dan antarteman tercantum di LKPD.", "tone": "plus"}, {"type": "sub", "title": "Kelemahan", "text": "Tindak lanjut pemetaan masih menyebut “tantangan variasi program” dan “contoh program bertahap”, sisa dari modul Arduino.\nSemua tujuan dicapai dalam satu pertemuan 135 menit, sehingga waktu presentasi kelompok sangat terbatas.\nDaftar pustaka buku kelas XII masih bertahun 2022 (Kemendikbudristek), berbeda dengan modul lain.", "tone": "minus"}]}, {"heading": "Pelaksanaan pembelajaran di kelas", "lead": "Bagaimana modul berjalan di kelas.", "blocks": [{"type": "gallery", "items": [{"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-03-53.jpg", "label": "Studi kasus aplikasi navigasi", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.03.53.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-04-32.jpg", "label": "Kelompok menyusun jadwal piket", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.04.32.jpeg"}, {"src": "berkas/video/WhatsApp-Video-2026-10-30-at-09-59-47.mp4", "label": "Presentasi diagram solusi", "caption": "", "kind": "video", "name": "WhatsApp Video 2026-10-30 at 09.59.47.mp4"}]}, {"type": "sub", "title": "Rencana kegiatan", "text": "Pendahuluan 15 menit: pemantik jadwal belajar, diagnostik lisan, pembentukan kelompok.\nInti 105 menit: studi kasus navigasi, LKPD kasus Rafi dan jadwal piket, presentasi, kuis formatif.\nPenutup 15 menit: simpulan, exit ticket, doa.", "tone": ""}]}, {"heading": "Refleksi Siklus 4", "lead": "", "blocks": []}]}], "sections": []}, {"id": "lampiran", "nav": "Lampiran", "eyebrow": "Lampiran", "title": "Lampiran", "blurb": "Lembar penilaian perangkat dan praktik mengajar tiap siklus, serta dokumentasi kegiatan.", "intro": "Dokumen pendukung pelaksanaan PPL Mandiri.", "sections": [{"heading": "Penilaian Siklus 1 · Informatika Sekarang dan Masa Depan", "lead": "Penilaian perangkat pembelajaran dan praktik mengajar Siklus 1.", "blocks": [{"type": "link", "kind": "pdf", "label": "Lembar penilaian perangkat pembelajaran Siklus 1", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-7-Penilaian-Perangkat-Pembelajaran-1-3.pdf", "name": "Lampiran 7 Penilaian Perangkat Pembelajaran-1-3.pdf"}, {"type": "link", "kind": "pdf", "label": "Lembar penilaian praktik mengajar Siklus 1", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-8-Penilaian-Praktek-Pembelajaran-1-4.pdf", "name": "Lampiran 8 Penilaian Praktek Pembelajaran-1-4.pdf"}]}, {"heading": "Penilaian Siklus 2 · Lampu Lalu Lintas Arduino", "lead": "Penilaian perangkat pembelajaran dan praktik mengajar Siklus 2.", "blocks": [{"type": "link", "kind": "pdf", "label": "Lembar penilaian perangkat pembelajaran Siklus 2", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-7-Penilaian-Perangkat-Pembelajaran-4-6.pdf", "name": "Lampiran 7 Penilaian Perangkat Pembelajaran-4-6.pdf"}, {"type": "link", "kind": "pdf", "label": "Lembar penilaian praktik mengajar Siklus 2", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-8-Penilaian-Praktek-Pembelajaran-5-8.pdf", "name": "Lampiran 8 Penilaian Praktek Pembelajaran-5-8.pdf"}]}, {"heading": "Penilaian Siklus 3 · Running Text LED Matrix", "lead": "Penilaian perangkat pembelajaran dan praktik mengajar Siklus 3.", "blocks": [{"type": "link", "kind": "pdf", "label": "Lembar penilaian perangkat pembelajaran Siklus 3", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-7-Penilaian-Perangkat-Pembelajaran-13-15.pdf", "name": "Lampiran 7 Penilaian Perangkat Pembelajaran-13-15.pdf"}, {"type": "link", "kind": "pdf", "label": "Lembar penilaian praktik mengajar Siklus 3", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-8-Penilaian-Praktek-Pembelajaran-9-12.pdf", "name": "Lampiran 8 Penilaian Praktek Pembelajaran-9-12.pdf"}]}, {"heading": "Penilaian Siklus 4 · Berpikir Komputasional", "lead": "Penilaian perangkat pembelajaran dan praktik mengajar Siklus 4.", "blocks": [{"type": "link", "kind": "pdf", "label": "Lembar penilaian perangkat pembelajaran Siklus 4", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-7-Penilaian-Perangkat-Pembelajaran-16-18.pdf", "name": "Lampiran 7 Penilaian Perangkat Pembelajaran-16-18.pdf"}, {"type": "link", "kind": "pdf", "label": "Lembar penilaian praktik mengajar Siklus 4", "url": "", "embed": false, "src": "berkas/dokumen/Lampiran-8-Penilaian-Praktek-Pembelajaran-13-16.pdf", "name": "Lampiran 8 Penilaian Praktek Pembelajaran-13-16.pdf"}]}, {"heading": "Dokumentasi kegiatan", "lead": "Foto kegiatan selama PPL Mandiri.", "blocks": [{"type": "gallery", "items": [{"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-21-02-2.jpg", "label": "Dokumentasi 1", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.21.02.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-13-39.jpg", "label": "Dokumentasi 2", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.13.39.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-20-45.jpg", "label": "Dokumentasi 3", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.20.45.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-21-04.jpg", "label": "Dokumentasi 4", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.21.04.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-21-03k.jpg", "label": "Dokumentasi 5", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.21.03k.jpeg"}, {"src": "berkas/foto/WhatsApp-Image-2026-10-30-at-10-46-04.jpg", "label": "Dokumentasi 6", "caption": "", "kind": "img", "name": "WhatsApp Image 2026-10-30 at 10.46.04.jpeg"}]}]}]}]}</script><script id="main">var SKEL="<!doctype html><html><head><meta charset=utf8><meta name=viewport content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}<\/style><\/head><body>";
+var HEAD="<title>E-Portofolio Erwin Fajariansyah<\/title><meta name=\"claude:viewport-fit-sides\" content=\"cover\"><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap\">";
+/* E-Portofolio: tampilan pengunjung dan mode edit admin.
+   Semua isi halaman berasal dari data/content.json. */
+(function () {
+  var CFG = {};
+  var S = JSON.parse(document.getElementById('data').textContent);
+  var draft = null, editing = false, canWrite = false, artifactNs = null, assetsNs = null, dirty = false, saving = false, pendingImg = null;
+  var app = document.getElementById('app'), fileIn = document.getElementById('file');
+
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function fmt(s) { return esc(s).replace(/\[([^\]\n]{1,240})\]/g, '<mark class="fill">[$1]</mark>'); }
+  function safeUrl(u) { u = String(u || '').trim(); return /^https?:\/\//i.test(u) ? u : ''; }
+  function safeImg(u) { u = String(u || ''); return (/^\/_blob\/[\w-]+$/.test(u) || /^berkas\/[\w\/.-]+$/.test(u)) && u.indexOf('..') < 0 ? u : ''; }
+  function get(p) { return p.split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, S); }
+  function set(p, v) { var ks = p.split('.'), last = ks.pop(); ks.reduce(function (o, k) { return o[k]; }, S)[last] = v; }
+  function T(tag, p, cls) {
+    var v = get(p); cls = cls || '';
+    if (editing) return '<' + tag + ' class="' + cls + ' ed" data-path="' + p + '" contenteditable="true" spellcheck="false">' + esc(v) + '</' + tag + '>';
+    return '<' + tag + ' class="' + cls + '">' + fmt(v) + '</' + tag + '>';
+  }
+  /* mode terang / gelap: default terang, pilihan pengunjung diingat di browser */
+  function setTheme(t, remember) {
+    document.documentElement.setAttribute('data-mode', t);
+    if (remember) { try { localStorage.setItem('eport-theme', t); } catch (e) {} }
+    var b = document.querySelector('.theme-btn'); if (b) b.outerHTML = themeBtn();
+  }
+  function themeBtn() {
+    var dark = document.documentElement.getAttribute('data-mode') === 'dark';
+    var icon = dark ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+    var lbl = dark ? 'Ganti ke mode terang' : 'Ganti ke mode gelap';
+    return '<button class="theme-btn" data-act="theme" title="' + lbl + '" aria-label="' + lbl + '">' + icon + '</button>';
+  }
+  (function () { var t = 'light'; try { if (localStorage.getItem('eport-theme') === 'dark') t = 'dark'; } catch (e) {} setTheme(t, false); })();
+  async function downloadFile(src, name) {
+    if (!safeImg(src)) return;
+    var dl = null; try { dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null; } catch (e) {}
+    if (!dl) { var a = document.createElement('a'); a.href = src; a.download = name || ''; a.target = '_blank'; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove(); return; }
+    try {
+      var res = await fetch(src); if (!res.ok) throw new Error('fetch');
+      await dl.save({ filename: name || 'berkas', data: await res.blob() });
+    } catch (err) {
+      var c = err && err.code;
+      if (c === 'declined') return;
+      toast(c === 'rejected_extension' ? 'Jenis berkas ini tidak bisa diunduh dari halaman.' : c === 'rate_limited' ? 'Tunggu sebentar lalu coba lagi.' : 'Berkas gagal diunduh. Coba lagi.');
+    }
+  }
+  var menuOpen = false;
+  /* PDF ditampilkan halaman demi halaman di kotak yang bisa di-scroll (pdf.js) */
+  var PDFJS = 'lib/pdfjs/', pdfLib = null, pdfCache = {};
+  function loadPdfLib() {
+    if (pdfLib) return pdfLib;
+    pdfLib = new Promise(function (ok, no) {
+      var s = document.createElement('script'); s.src = PDFJS + 'pdf.min.js';
+      s.onload = function () { var L = window.pdfjsLib; if (!L) return no(new Error('pdfjs')); L.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js'; ok(L); };
+      s.onerror = function () { pdfLib = null; no(new Error('pdfjs')); };
+      document.head.appendChild(s);
+    });
+    return pdfLib;
+  }
+  function pdfPages(src, width) {
+    if (pdfCache[src]) return pdfCache[src];
+    pdfCache[src] = loadPdfLib().then(function (L) { return L.getDocument({ url: src }).promise; }).then(async function (doc) {
+      var out = [], n = Math.min(doc.numPages, 60), dpr = Math.min(window.devicePixelRatio || 1, 2);
+      for (var i = 1; i <= n; i++) {
+        var pg = await doc.getPage(i), v1 = pg.getViewport({ scale: 1 }), sc = Math.max(width, 600) / v1.width * dpr, vp = pg.getViewport({ scale: sc });
+        var c = document.createElement('canvas'); c.width = Math.floor(vp.width); c.height = Math.floor(vp.height);
+        await pg.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise; out.push(c);
+      }
+      return { pages: out, total: doc.numPages };
+    });
+    pdfCache[src].catch(function () { delete pdfCache[src]; });
+    return pdfCache[src];
+  }
+  function mountPdfs() {
+    app.querySelectorAll('.pdfview[data-src]').forEach(function (box) {
+      var src = box.dataset.src; if (!safeImg(src)) return;
+      pdfPages(src, box.clientWidth || 800).then(function (r) {
+        if (!box.isConnected) return;
+        box.innerHTML = '';
+        r.pages.forEach(function (c) { var k = c; if (c.parentNode) { k = document.createElement('canvas'); k.width = c.width; k.height = c.height; k.getContext('2d').drawImage(c, 0, 0); } box.appendChild(k); });
+        if (r.total > r.pages.length) { var m = document.createElement('div'); m.className = 'pdfmsg'; m.textContent = 'Menampilkan ' + r.pages.length + ' dari ' + r.total + ' halaman. Unduh untuk melihat semuanya.'; box.appendChild(m); }
+      }).catch(function () { if (box.isConnected) box.innerHTML = '<div class="pdfmsg">PDF tidak bisa ditampilkan di sini. Gunakan tombol Unduh PDF.</div>'; });
+    });
+  }
+  var tabIdx = {};
+  function cur() { var h = (location.hash || '').slice(1); for (var i = 0; i < S.pages.length; i++) if (S.pages[i].id === h) return i; return 0; }
+
+  var IC = {
+    doc: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 13h8M8 17h6"/></svg>',
+    video: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2.5v9L17 14"/></svg>',
+    map: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+    media: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>',
+    img: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 8"/></svg>'
+  };
+  var PAGE_IC = {
+    perangkat: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>',
+    profil: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+    lk3: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 4-6"/></svg>',
+    uts: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg>',
+    uas: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
+    lampiran: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11l-8.5 8.5a5 5 0 0 1-7-7L14 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L15 7"/></svg>'
+  };
+  var ADDS = { key: 'Kotak ringkasan', p: 'Paragraf', sub: 'Subjudul + isi', list: 'Daftar poin', steps: 'Alur bertahap', stats: 'Angka penting', img: 'Foto / video / berkas', link: 'Tautan dokumen', gallery: 'Galeri media' };
+  var TONE_IC = {
+    plus: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg>',
+    minus: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>',
+    next: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12.5 8.5L16 12l-3.5 3.5"/></svg>',
+    key: '<svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>'
+  };
+  function newBlock(t) {
+    if (t === 'p') return { type: 'p', text: '[Tulis paragraf di sini]' };
+    if (t === 'sub') return { type: 'sub', title: '[Subjudul]', text: '[Isi]', tone: '' };
+    if (t === 'list') return { type: 'list', items: ['[Poin]'] };
+    if (t === 'img') return { type: 'img', src: null, label: 'Foto', caption: '' };
+    if (t === 'link') return { type: 'link', kind: 'doc', label: '[Nama dokumen]', url: '' };
+    if (t === 'key') return { type: 'sub', title: 'Ringkasan', text: '[Tulis ringkasan]', tone: 'key' };
+    if (t === 'steps') return { type: 'steps', items: [{ title: '[Tahap]', text: '[Penjelasan]' }] };
+    if (t === 'stats') return { type: 'stats', items: [{ value: '[angka]', label: '[keterangan]', note: '' }] };
+    if (t === 'gallery') return { type: 'gallery', items: [{ src: null, label: 'Foto kegiatan', caption: '' }] };
+  }
+
+  /* YouTube dan Google Drive bisa disematkan langsung */
+  function embedUrl(u) {
+    u = safeUrl(u); if (!u) return '';
+    var m = u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})/);
+    if (m) return 'https://www.youtube.com/embed/' + m[1];
+    m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+    if (m) return 'https://drive.google.com/file/d/' + m[1] + '/preview';
+    m = u.match(/canva\.com\/design\/([\w-]+)\/([\w-]+)/);
+    if (m) return 'https://www.canva.com/design/' + m[1] + '/' + m[2] + '/view?embed';
+    m = u.match(/docs\.google\.com\/(document|presentation|spreadsheets)\/d\/([\w-]+)/);
+    if (m) return 'https://docs.google.com/' + m[1] + '/d/' + m[2] + (m[1] === 'presentation' ? '/embed' : '/preview');
+    return '';
+  }
+
+  function mediaKind(o) { if (o.kind === 'pdf' || (o.kind === 'file' && /\.pdf$/i.test(o.name || ''))) return 'pdf'; return o.kind === 'video' || o.kind === 'file' ? o.kind : 'img'; }
+  function imgFig(p, o) {
+    var src = safeImg(o.src), kind = mediaKind(o), inner;
+    if (!src) inner = '<div class="ph"><div>' + IC.img + esc(o.label || 'Foto') + '<br>' + (editing ? 'belum diunggah' : 'menyusul') + '</div></div>';
+    else if (kind === 'video') inner = '<video src="' + esc(src) + '" controls playsinline preload="metadata" aria-label="' + esc(o.caption || o.label || 'Video') + '"></video>';
+    else if (kind === 'pdf') {
+      var pn = o.name || o.label || 'Dokumen.pdf';
+      inner = '<div class="pdfview" data-src="' + esc(src) + '" tabindex="0" aria-label="' + esc(pn) + '"><div class="pdfmsg">Memuat PDF…</div></div>' +
+        '<div class="pdfbar"><span>' + esc(pn) + '</span><button type="button" class="btn sm" data-act="dl" data-src="' + esc(src) + '" data-name="' + esc(pn) + '">Unduh PDF</button></div>';
+    }
+    else if (kind === 'file') {
+      var nm = o.name || o.label || 'Berkas', ext = (String(nm).match(/\.([a-z0-9]{1,5})$/i) || [, 'file'])[1].toUpperCase();
+      inner = '<button type="button" class="lnk filecard" data-act="dl" data-src="' + esc(src) + '" data-name="' + esc(nm) + '"><span class="ic">' + IC.doc + '</span><span class="tx"><span class="lb">' + esc(nm) + '</span><span class="u">' + esc(ext) + ' · klik untuk mengunduh</span></span></button>';
+    }
+    else inner = '<img src="' + esc(src) + '" alt="' + esc(o.caption || o.label || 'Foto') + '" loading="lazy">';
+    var cap = editing ? T('figcaption', p + '.caption') : (o.caption ? '<figcaption>' + fmt(o.caption) + '</figcaption>' : '');
+    var ctl = editing ? '<div class="ctl">' + (assetsNs ? '<button class="btn sm" data-act="upload" data-p="' + p + '">' + (src ? 'Ganti berkas' : 'Unggah foto / video / berkas') + '</button>' : '<span class="u">Unggah tidak tersedia di tampilan ini</span>') +
+      (src ? '<button class="btn sm" data-act="clear-img" data-p="' + p + '">Kosongkan</button>' : '') + '</div>' : '';
+    return '<figure>' + inner + cap + ctl + '</figure>';
+  }
+
+  function block(p, b, bi, arrP) {
+    var h = '';
+    if (b.type === 'p') h = T('p', p + '.text', 't');
+    else if (b.type === 'sub') {
+      var tone = b.tone || '', lines = String(b.text || '').split('\n').filter(function (x) { return x.trim(); });
+      var listy = !editing && /^(plus|minus|next)$/.test(tone) && lines.length > 1;
+      h = '<div class="sub ' + esc(tone) + '"><div class="sh">' + (TONE_IC[tone] || '') + T('h3', p + '.title') + '</div>' +
+        (listy ? '<ul class="chk">' + lines.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>' : ((b.text || editing) ? T('p', p + '.text') : '')) + '</div>';
+    }
+    else if (b.type === 'list') {
+      h = '<ul class="l">' + b.items.map(function (_, i) {
+        var ip = p + '.items.' + i;
+        return editing ? '<li><div class="li-row">' + T('div', ip) + '<button class="btn x" title="Hapus poin" data-act="del" data-p="' + p + '.items" data-i="' + i + '">×</button></div></li>' : '<li>' + fmt(b.items[i]) + '</li>';
+      }).join('') + '</ul>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-item" data-p="' + p + '.items">+ Poin</button></div>';
+    } else if (b.type === 'kv') {
+      h = '<dl class="kv">' + b.rows.map(function (_, i) {
+        var rp = p + '.rows.' + i;
+        return T('dt', rp + '.0') + (editing ? '<dd><div class="li-row">' + T('div', rp + '.1') + '<button class="btn x" data-act="del" data-p="' + p + '.rows" data-i="' + i + '">×</button></div></dd>' : T('dd', rp + '.1'));
+      }).join('') + '</dl>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-kv" data-p="' + p + '.rows">+ Baris</button></div>';
+    } else if (b.type === 'img') h = imgFig(p, b);
+    else if (b.type === 'gallery') {
+      h = '<div class="gal">' + b.items.map(function (it, i) {
+        return '<div>' + imgFig(p + '.items.' + i, it) + (editing ? '<div class="ctl"><button class="btn x" data-act="del" data-p="' + p + '.items" data-i="' + i + '">Hapus slot</button></div>' : '') + '</div>';
+      }).join('') + '</div>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-gal" data-p="' + p + '.items">+ Slot media</button></div>';
+    } else if (b.type === 'link') {
+      var ic = IC[b.kind] || IC.doc, u = safeUrl(b.url), emb = embedUrl(b.url), tall = emb && !/youtube/.test(emb);
+      if (safeImg(b.src)) {
+        h = '<div class="doctitle">' + (editing ? T('span', p + '.label', 'lb') : '<b>' + fmt(b.label) + '</b>') + '</div>' + imgFig(p, b);
+      } else if (editing) {
+        h = '<div class="lnk"><span class="ic">' + ic + '</span><span class="tx">' + T('span', p + '.label', 'lb') +
+          '<input class="url" data-url="' + p + '.url" placeholder="Tempel link Google Drive / Google Slides / Canva / YouTube di sini" value="' + esc(b.url) + '">' +
+          '</span></div>' + (assetsNs ? '<div class="ctl"><span class="u">atau</span><button class="btn sm" data-act="upload" data-p="' + p + '">Unggah file PDF</button></div>' : '');
+      } else if (u) {
+        h = (emb ? '<div class="embed' + (tall ? ' doc' : '') + '"><iframe src="' + esc(emb) + '" title="' + esc(b.label) + '" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>' : '') +
+          '<a class="lnk' + (emb ? ' under' : '') + '" href="' + esc(u) + '" target="_blank" rel="noopener"><span class="ic">' + ic + '</span><span class="tx"><span class="lb">' + fmt(b.label) + '</span><span class="u">' + (emb ? 'Buka di tab baru' : esc(u)) + '</span></span></a>';
+      } else {
+        h = '<div class="lnk empty"><span class="ic">' + ic + '</span><span class="tx"><span class="lb">' + fmt(b.label) + '</span><span class="u">Tautan belum diisi</span></span></div>';
+      }
+    } else if (b.type === 'table') {
+      h = '<div class="tbl"><table><thead><tr>' + b.head.map(function (_, i) { return T('th', p + '.head.' + i); }).join('') + (editing ? '<th></th>' : '') + '</tr></thead><tbody>' +
+        b.rows.map(function (r, ri) {
+          return '<tr>' + r.map(function (_, ci) { return T('td', p + '.rows.' + ri + '.' + ci); }).join('') +
+            (editing ? '<td><button class="btn x" data-act="del" data-p="' + p + '.rows" data-i="' + ri + '">×</button></td>' : '') + '</tr>';
+        }).join('') + '</tbody></table></div>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-row" data-p="' + p + '">+ Baris tabel</button></div>';
+    }
+    else if (b.type === 'stats') {
+      h = '<div class="stats">' + b.items.map(function (it, i) {
+        var ip = p + '.items.' + i;
+        return '<div class="stat">' + T('b', ip + '.value', 'sv') + T('span', ip + '.label', 'sl') + ((it.note || editing) ? T('small', ip + '.note', 'sn') : '') +
+          (editing ? '<button class="btn x" data-act="del" data-p="' + p + '.items" data-i="' + i + '">×</button>' : '') + '</div>';
+      }).join('') + '</div>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-stat" data-p="' + p + '.items">+ Angka</button></div>';
+    }
+    else if (b.type === 'bars') {
+      var mx = +b.max || 100, tg = b.target == null ? null : +b.target;
+      h = '<div class="bars">' + b.rows.map(function (r, i) {
+        var rp = p + '.rows.' + i, v = parseFloat(String(r[1]).replace(',', '.')) || 0, w = Math.max(0, Math.min(100, v / mx * 100));
+        return '<div class="bar' + (tg != null && v < tg ? ' lo' : '') + '">' + T('span', rp + '.0', 'bl') +
+          '<span class="bt" aria-hidden="true"><span class="bf" style="width:' + w.toFixed(1) + '%"></span>' + (tg != null ? '<span class="tg" style="left:' + (tg / mx * 100).toFixed(1) + '%"></span>' : '') + '</span>' +
+          T('span', rp + '.1', 'bv') + (editing ? '<button class="btn x" data-act="del" data-p="' + p + '.rows" data-i="' + i + '">×</button>' : '') + '</div>';
+      }).join('') + ((b.note || editing) ? T('p', p + '.note', 'bnote') : '') + '</div>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-bar" data-p="' + p + '.rows">+ Batang</button></div>';
+    }
+    else if (b.type === 'steps') {
+      h = '<ol class="steps">' + b.items.map(function (it, i) {
+        var ip = p + '.items.' + i;
+        return '<li>' + T('h4', ip + '.title') + T('p', ip + '.text') + (editing ? '<div class="ctl"><button class="btn x" data-act="del" data-p="' + p + '.items" data-i="' + i + '">Hapus tahap</button></div>' : '') + '</li>';
+      }).join('') + '</ol>';
+      if (editing) h += '<div class="ctl"><button class="btn sm" data-act="add-step" data-p="' + p + '.items">+ Tahap</button></div>';
+    }
+    if (editing) h += '<div class="ctl blk-del"><button class="btn x" data-act="del" data-p="' + arrP + '" data-i="' + bi + '">Hapus blok ini</button></div>';
+    return '<div class="blk">' + h + '</div>';
+  }
+
+  function section(P, s, si, numbered) {
+    var sp = P + '.sections.' + si;
+    var h = '<section class="sec' + (numbered ? ' numd' : '') + '" id="sec-' + si + '"><header><h2>' + (numbered ? '<span class="no">' + String(si + 1).padStart(2, '0') + '</span>' : '') + T('span', sp + '.heading') + '</h2>' +
+      ((s.lead || editing) ? T('p', sp + '.lead', 'lead') : '') + '</header><div class="blocks">';
+    h += s.blocks.map(function (b, bi) { return block(sp + '.blocks.' + bi, b, bi, sp + '.blocks'); }).join('');
+    if (editing) h += '<div class="addrow"><span>Tambah:</span>' + Object.keys(ADDS).map(function (k) { return '<button class="btn sm" data-act="add-block" data-p="' + sp + '.blocks" data-t="' + k + '">' + ADDS[k] + '</button>'; }).join('') + '</div>';
+    return h + '</div></section>';
+  }
+
+  function render() {
+    var pi = cur(), page = S.pages[pi], P = 'pages.' + pi, h = '';
+    document.body.classList.toggle('editing', editing);
+    document.title = 'E-Portofolio ' + (S.site.name || '') + (pi ? ' · ' + page.title : '');
+    var initials = String(S.site.name || 'EP').replace(/,.*$/, '').split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase();
+    h += '<header class="top' + (menuOpen ? ' open' : '') + '"><div class="wrap"><a class="brand" href="#' + esc(S.pages[0].id) + '"><span class="logo" aria-hidden="true">' + esc(initials) + '</span><span><b>' + esc(S.site.name) + '</b><small>E-Portofolio PPL Mandiri · PPG UMS</small></span></a><nav class="nav" aria-label="Halaman">' +
+      S.pages.map(function (pg, i) { return '<a href="#' + esc(pg.id) + '"' + (i === pi ? ' aria-current="page"' : '') + '>' + esc(pg.nav) + '</a>'; }).join('') + '</nav>' + themeBtn() + '<button class="menu-btn" data-act="menu" aria-label="Menu halaman" aria-expanded="' + menuOpen + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="' + (menuOpen ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16') + '"/></svg></button></div></header>';
+    if (canWrite) {
+      h += '<div class="editbar"><div class="wrap"><span class="badge">' + (editing ? 'Mode edit' : 'Pemilik') + '</span><span class="msg" id="msg">' +
+        (editing ? (saving ? 'Menyimpan…' : dirty ? 'Ada perubahan yang belum disimpan.' : 'Klik teks bergaris putus-putus untuk mengubahnya.') : 'Hanya Anda yang melihat bilah ini. Pengunjung melihat halaman tanpa tombol edit.') + '</span>' +
+        (editing ? '<button class="btn sm" data-act="done">Selesai edit</button><button class="btn primary sm" data-act="save"' + (dirty && !saving ? '' : ' disabled') + '>Simpan perubahan</button>'
+                 : '<button class="btn primary sm" data-act="edit">Edit halaman</button>') + '</div></div>';
+    }
+    if (canWrite && draft) h += '<div class="editbar"><div class="wrap"><span class="msg">Ada perubahan dari sesi sebelumnya yang belum tersimpan.</span><button class="btn sm" data-act="restore">Pulihkan</button><button class="btn sm" data-act="discard">Buang</button></div></div>';
+    h += '<main>';
+    if (page.hero) {
+      var chips = String(S.site.strip || '').split('·').map(function (c) { return c.trim(); }).filter(Boolean);
+      var byId = function (id) { for (var k = 0; k < S.pages.length; k++) if (S.pages[k].id === id) return S.pages[k]; return null; };
+      var lk = byId('lk3') || S.pages[1] || page, pf = byId('perangkat') || S.pages[1] || page;
+      h += '<section class="hero-band"><div class="wrap hero"><div>' +
+        (editing ? T('div', 'site.strip', 'chip') : '<div class="chips">' + chips.map(function (c) { return '<span class="chip">' + esc(c) + '</span>'; }).join('') + '</div>') +
+        T('h1', 'site.name') + T('p', 'site.role', 'role') + T('p', 'site.program', 'prog') + T('p', 'site.tagline', 'tag') +
+        '<div class="cta"><a class="btn gold" href="#' + esc(lk.id) + '">Lihat ' + esc(lk.nav) + '</a><a class="btn ghost" href="#' + esc(pf.id) + '">' + esc(pf.nav) + '</a></div>' +
+        '</div><div class="portrait">' + imgFig('site.photo', S.site.photo) + '</div></div></section>';
+      h += '<div class="wrap home-grid">' + page.sections.map(function (s, si) { return section(P, s, si, false); }).join('');
+      h += '<section class="sec"><h2>Isi portofolio</h2><div class="cards">' + S.pages.slice(1).map(function (pg) {
+        return '<a class="card" href="#' + esc(pg.id) + '"><span class="ci">' + (PAGE_IC[pg.id] || IC.doc) + '</span><b>' + esc(pg.title) + '</b><span>' + esc(pg.blurb || '') + '</span><i>Buka halaman →</i></a>';
+      }).join('') + '</div></section></div>';
+    } else {
+      h += '<section class="page-band"><div class="wrap"><div class="crumb"><a href="#' + esc(S.pages[0].id) + '">Beranda</a><span aria-hidden="true">›</span><span>' + esc(page.nav) + '</span></div>' +
+        T('span', P + '.eyebrow', 'strip') + T('h1', P + '.title') + T('p', P + '.intro', 'intro') + '</div></section>';
+      var SP = P, secs = page.sections, nextTab = null;
+      if (page.tabs && page.tabs.length) {
+        var ti = Math.min(tabIdx[page.id] || 0, page.tabs.length - 1);
+        SP = P + '.tabs.' + ti; secs = page.tabs[ti].sections;
+        if (ti + 1 < page.tabs.length) nextTab = { i: ti + 1, label: page.tabs[ti + 1].label };
+        h += '<div class="tabs-band"><div class="wrap"><div class="tabs" role="tablist" aria-label="Pilih siklus">' + page.tabs.map(function (t, i) {
+          return '<button role="tab" data-act="tab" data-i="' + i + '" aria-selected="' + (i === ti) + '">' + esc(t.label) + (t.badge ? '<span class="tbadge">★ ' + esc(t.badge) + '</span>' : '') + '</button>';
+        }).join('') + '</div></div></div>';
+      }
+      var withSide = secs.length > 1;
+      h += '<div class="wrap layout' + (withSide ? '' : ' single') + '" id="tabtop">';
+      if (withSide) h += '<aside class="side" aria-label="Di halaman ini"><h4>Di halaman ini</h4>' + secs.map(function (s, i) { return '<button data-act="jump" data-i="' + i + '"><span class="n">' + (i + 1) + '</span><span>' + esc(s.heading) + '</span></button>'; }).join('') + '</aside>';
+      h += '<div class="content">' + secs.map(function (s, si) { return section(SP, s, si, true); }).join('') +
+        (nextTab ? '<button class="tabnext" data-act="tab" data-i="' + nextTab.i + '"><small>Tab berikutnya</small><b>' + esc(nextTab.label) + ' →</b></button>' : '') + '</div></div>';
+      var pv = S.pages[pi - 1], nx = S.pages[pi + 1];
+      h += '<nav class="wrap pn" aria-label="Halaman lain">' + (pv ? '<a href="#' + esc(pv.id) + '"><small>← Sebelumnya</small><b>' + esc(pv.nav) + '</b></a>' : '<span></span>') +
+        (nx ? '<a class="nx" href="#' + esc(nx.id) + '"><small>Berikutnya →</small><b>' + esc(nx.nav) + '</b></a>' : '') + '</nav>';
+    }
+    h += '</main><footer><div class="wrap"><div><b>' + esc(S.site.name) + '</b>' + esc(S.site.footer) + '</div>' + '' + '</div></footer>';
+    app.innerHTML = h;
+    spy();
+    mountPdfs();
+  }
+  var io = null;
+  function spy() {
+    if (io) { io.disconnect(); io = null; }
+    var btns = app.querySelectorAll('.side button[data-act="jump"]');
+    if (!btns.length || !('IntersectionObserver' in window)) return;
+    io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (!e.isIntersecting) return; var id = e.target.id.slice(4); btns.forEach(function (b) { b.classList.toggle('on', b.dataset.i === id); }); });
+    }, { rootMargin: '-140px 0px -55% 0px' });
+    app.querySelectorAll('.sec[id^="sec-"]').forEach(function (s) { io.observe(s); });
+  }
+
+  function toast(t) { var d = document.createElement('div'); d.className = 'toast'; d.textContent = t; document.body.appendChild(d); setTimeout(function () { d.remove(); }, 3600); }
+  function markDirty() {
+    if (dirty) return; dirty = true;
+    var m = document.getElementById('msg'); if (m) m.textContent = 'Ada perubahan yang belum disimpan.';
+    var b = app.querySelector('[data-act="save"]'); if (b) b.disabled = false;
+  }
+  function rerender() { var y = window.scrollY; render(); window.scrollTo(0, y); }
+
+  function build() {
+    var json = JSON.stringify(S).replace(/</g, '\\u003c');
+    return SKEL + HEAD + '<style id="css">' + document.getElementById('css').textContent + '<\/style><div id="app"></div><input type="file" id="file" accept="image/*,video/*,application/pdf,text/plain,text/csv,text/markdown,application/json,.csv,.md,.txt,.json,.pdf" hidden><script type="application/json" id="data">' + json + '<\/script><script id="main">' + document.getElementById('main').textContent + '<\/script></body></html>';
+  }
+  function save() {
+    if (saving || !artifactNs) return; saving = true; rerender();
+    try { sessionStorage.setItem('eport-draft', JSON.stringify(S)); } catch (e) {}
+    artifactNs.publish(build()).then(function () { saving = false; dirty = false; toast('Tersimpan'); rerender(); })
+      .catch(function (err) {
+        saving = false; var c = err && err.code;
+        if (c === 'conflict') toast('Ada versi yang lebih baru. Halaman dimuat ulang; perubahan Anda bisa dipulihkan.');
+        else if (c === 'not_writer' || c === 'not_granted' || c === 'not_declared' || c === 'capability_disabled' || c === 'consent_required') { canWrite = false; editing = false; toast('Akun ini hanya bisa melihat halaman.'); }
+        else if (c === 'rate_limited') toast('Terlalu sering menyimpan. Tunggu sebentar lalu Simpan lagi.');
+        else if (c === 'too_large') toast('Halaman terlalu besar untuk disimpan.');
+        else toast('Gagal menyimpan. Periksa koneksi lalu Simpan lagi.');
+        rerender();
+      });
+  }
+
+  {
+    app.addEventListener('input', function (e) {
+      var t = e.target;
+      if (!editing) return;
+      if (t.dataset.path) { set(t.dataset.path, t.innerText.replace(/\n$/, '')); markDirty(); }
+      else if (t.dataset.url) { set(t.dataset.url, t.value.trim()); markDirty(); }
+      else if (t.dataset.embed) { set(t.dataset.embed, t.checked); markDirty(); }
+    });
+    app.addEventListener('paste', function (e) {
+      if (!editing || !e.target.closest('[contenteditable]')) return;
+      e.preventDefault();
+      document.execCommand('insertText', false, (e.clipboardData || window.clipboardData).getData('text/plain'));
+    });
+    fileIn.addEventListener('change', function () {
+      var f = fileIn.files && fileIn.files[0]; if (!f || !pendingImg) return;
+      var p = pendingImg; pendingImg = null;
+      if (f.size > 20 * 1024 * 1024) { toast('Berkas terlalu besar. Maksimal 20 MB. Untuk video panjang, unggah ke YouTube/Drive lalu pakai blok Tautan dokumen.'); return; }
+      if (!assetsNs) return; toast('Mengunggah ' + f.name + '…');
+      assetsNs.upload(f).then(function (r) {
+        var ty = String(r.contentType || f.type || ''), k = /^image\//.test(ty) ? 'img' : /^video\//.test(ty) ? 'video' : (/pdf/.test(ty) || /\.pdf$/i.test(f.name)) ? 'pdf' : 'file';
+        set(p + '.src', '/_blob/' + r.id); set(p + '.kind', k); set(p + '.name', f.name);
+        markDirty(); rerender(); toast('Berkas terunggah. Jangan lupa tekan Simpan.');
+      })
+        .catch(function (err) { var c = err && err.code; toast(c === 'unsupported_type' ? 'Jenis berkas ini belum didukung. Bisa: foto, GIF, video, PDF, teks/CSV. Word/PowerPoint simpan dulu sebagai PDF.' : c === 'too_large' ? 'Berkas terlalu besar (maks. 20 MB).' : c === 'quota_or_state' ? 'Kuota penyimpanan penuh.' : 'Berkas gagal diunggah. Coba lagi.'); });
+    });
+    window.addEventListener('beforeunload', function (e) { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+  }
+
+  app.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b) return;
+    var a = b.dataset.act, p = b.dataset.p;
+    if (a === 'tab') { tabIdx[S.pages[cur()].id] = +b.dataset.i; render(); var tb = document.querySelector('.tabs-band'); if (tb && window.scrollY > tb.offsetTop) window.scrollTo(0, tb.offsetTop - 70); return; }
+    if (a === 'dl') { downloadFile(b.dataset.src, b.dataset.name); return; }
+    if (a === 'menu') { menuOpen = !menuOpen; rerender(); return; }
+    if (a === 'theme') { setTheme(document.documentElement.getAttribute('data-mode') === 'dark' ? 'light' : 'dark', true); return; }
+    if (a === 'jump') { var el = document.getElementById('sec-' + b.dataset.i); if (el) el.scrollIntoView({ behavior: 'smooth' }); return; }
+    if (a === 'edit' && canWrite) { editing = true; rerender(); return; }
+    if (a === 'restore') { S = draft; draft = null; editing = true; dirty = true; rerender(); return; }
+    if (a === 'discard') { draft = null; try { sessionStorage.removeItem('eport-draft'); } catch (e) {} rerender(); return; }
+    if (!editing) return;
+    if (a === 'done') { editing = false; rerender(); return; }
+    if (a === 'save') { save(); return; }
+    if (a === 'upload') { pendingImg = p; fileIn.value = ''; fileIn.click(); return; }
+    if (a === 'clear-img') { set(p + '.src', null); set(p + '.kind', null); set(p + '.name', null); }
+    else if (a === 'del') get(p).splice(+b.dataset.i, 1);
+    else if (a === 'add-item') get(p).push('[Poin baru]');
+    else if (a === 'add-kv') get(p).push(['[Label]', '[Isi]']);
+    else if (a === 'add-gal') get(p).push({ src: null, label: 'Foto kegiatan', caption: '' });
+    else if (a === 'add-row') { var tb = get(p); tb.rows.push(tb.head.map(function () { return '[..]'; })); }
+    else if (a === 'add-block') get(p).push(newBlock(b.dataset.t));
+    else if (a === 'add-stat') get(p).push({ value: '[angka]', label: '[keterangan]', note: '' });
+    else if (a === 'add-step') get(p).push({ title: '[Tahap]', text: '[Penjelasan]' });
+    else if (a === 'add-bar') get(p).push(['[Label]', '0']);
+    else return;
+    markDirty(); rerender();
+  });
+
+  window.addEventListener('hashchange', function () { menuOpen = false; render(); window.scrollTo(0, 0); });
+  render();
+  (async function () {
+    if (!window.claude || !window.claude.use) return;
+    try {
+      var a = await window.claude.use('artifact'); if (!a) return; artifactNs = a;
+      var u = await window.claude.use('user'); var ok = u ? await u.canEdit() : false; if (!ok) return;
+      canWrite = true; assetsNs = await window.claude.use('assets');
+      try { var d = sessionStorage.getItem('eport-draft'); if (d && d !== JSON.stringify(S)) draft = JSON.parse(d); else sessionStorage.removeItem('eport-draft'); } catch (e) {}
+      rerender();
+    } catch (e) {}
+  })();
+})();
+</script></body></html>
